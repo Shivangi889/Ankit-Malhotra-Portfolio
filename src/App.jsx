@@ -8,7 +8,6 @@ import Hero from './pages/Home';
 import Projects from './pages/Projects';
 import Hobbies from './pages/Hobbies';
 
-const AboutUs = lazy(() => import('./pages/About Us'));
 
 
 const LoadingFallback = () => (
@@ -45,7 +44,6 @@ export default function App() {
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/about" element={<AboutUs />} />
           <Route path="/hobbies" element={<Hobbies/>} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/project" element={<Projects/>} />

@@ -10,7 +10,7 @@ const Header = () => {
     { path: '/', label: 'Home' },
     { path: '/project', label: 'Projects' },
     { path: '/hobbies', label: 'My Sandbox' },
-    { path: '/resume', label: 'Resume' },
+    // { path: '/resume', label: 'Resume' },
     { path: '/contact', label: 'Contact Me' }
   ];
 

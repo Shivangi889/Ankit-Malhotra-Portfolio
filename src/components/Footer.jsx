@@ -139,13 +139,13 @@ const Footer = () => {
                                 <span className="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition"></span>
                                 My Sandbox
                             </Link>
-                            <Link
+                            {/* <Link
                                 to="/resume"
                                 className="hover:text-white text-white transition-colors duration-200 flex items-center gap-2 group"
                             >
                                 <span className="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition"></span>
                                 Experience
-                            </Link>
+                            </Link> */}
                             <Link
                                 to="/contact"
                                 className="hover:text-white text-white transition-colors duration-200 flex items-center gap-2 group"
