@@ -1,0 +1,159 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@font-face {
+  font-family: 'BestermindRegular';
+  src: url('./assets/fonts/Bestermind/BestermindRegular.ttf');
+  src: url('./assets/fonts/Bestermind/BestermindRegular.ttf') format('embedded-opentype'),
+    url('./assets/fonts/Bestermind/BestermindRegular.ttf') format('truetype'),
+}
+
+:root {
+  --color-primary: #B6B6B6;
+  --color-secondary: #153060;
+  --color-text-primary: #0A0E15;
+  --color-text-black: #000000;
+  --color-text-btn: #164E62;
+  --font-tenor-sans: 'Tenor Sans', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+  --font-manrope: 'Manrope', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  /* text-decoration: none; */
+  /* color: inherit; */
+}
+
+button {
+  cursor: pointer;
+  /* border: none; */
+  outline: none;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.text-black {
+  color: var(--color-text-black);
+}
+
+.bg-black {
+  color: var(--color-text-black);
+}
+
+.text-btn {
+  color: var(--color-text-btn);
+}
+
+.bg-btn {
+  color: var(--color-text-btn);
+}
+
+
+
+
+.font-tenor-sans {
+  font-family: var(--font-tenor-sans);
+}
+
+.font-roboto {
+  font-family: var(--font-roboto);
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.font-manrope {
+  font-family: var(--font-manrope);
+}
+
+.font-roboto {
+  font-family: var(--font-roboto);
+}
+
+.custom-gradient {
+  background: linear-gradient(90deg, #C82D30 1.89%, #362695 67.23%, #B12F31 136.79%);
+}
+
+
+.hover-gradient:hover {
+  background: linear-gradient(90deg, #C82D30 1.89%, #362695 67.23%, #B12F31 136.79%);
+}
+
+
+.hidescroll::-webkit-scrollbar {
+  display: none;
+}
+
+
+.logo {
+  font-weight: 700;
+  color: white;
+  font-size: 2rem;
+  line-height: 1rem;
+  font-family: 'BestermindRegular';
+}
+
+.logo-highlight {
+  color: #fcfcfc;
+}
+
+.glass-card {
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Hover effect for cards */
+.group:hover .group-hover\:translate-y-0 {
+  transform: translateY(0) !important;
+}
