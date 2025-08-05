@@ -4,6 +4,39 @@ import { Award, GraduationCap, Club, Star } from 'lucide-react';
 import Sideimage from "../../assets/Achievements_ My Special Journey - visual selection.png";
 
 const Achievement = () => {
+  // Function to highlight keywords in descriptions
+  const highlightKeywords = (text) => {
+    const keywords = [
+      // Problem-solving related
+      'analytical frameworks', 'debugging', 'system flows', 'sustainable outcomes', 'product performance',
+
+      // Leadership related
+      'led with vision', 'expert-led workshops', 'hackathons', 'community-driven',
+      'collaborative culture', 'innovative tech solutions', 'team-building skills',
+
+      // Technical skills
+      'SQL Masterclass', 'development concepts',
+      'career-focused skills', 'technical communication',
+
+      // Achievements
+      'interdisciplinary strengths', 'consistent performance',
+
+
+      // Academic
+      'stellar GPA of 4.0', 'AI seminars', 'judging panels',
+      'data and AI domains'
+    ];
+
+    let highlightedText = text;
+    keywords.forEach(keyword => {
+      highlightedText = highlightedText.replace(
+        new RegExp(keyword, 'gi'),
+        match => `<span class="font-bold text-gray-900 bg-yellow-100 px-1">${match}</span>`
+      );
+    });
+    return { __html: highlightedText };
+  };
+
   const specialItems = [
     {
       icon: <Award className="w-12 h-12 text-purple-500" />,
@@ -50,7 +83,7 @@ const Achievement = () => {
   const prevItem = () => setCurrentItem((prev) => (prev - 1 + specialItems.length) % specialItems.length);
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row p-8 bg-gray-100">
+    <div className="min-h-screen flex flex-col lg:flex-row p-8 bg-white">
       {/* Left Image */}
       <div className="w-full lg:w-1/2 flex justify-center items-center mb-8 lg:mb-0">
         <img
@@ -71,20 +104,22 @@ const Achievement = () => {
 
         {/* Card */}
         <div className="bg-white rounded-xl p-8 shadow-lg mb-8 transition-all duration-500">
-          <div className="mb-4 flex gap-2 ">
+          <div className="mb-4 flex gap-2">
             {specialItems[currentItem].icon}
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">
-            {specialItems[currentItem].title}
-          </h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+              {specialItems[currentItem].title}
+            </h2>
           </div>
-        
-          <p className="text-gray-600 mb-6">
-            {specialItems[currentItem].description}
-          </p>
+
+          <p
+            className="text-gray-600 mb-6"
+            dangerouslySetInnerHTML={highlightKeywords(specialItems[currentItem].description)}
+          />
+
           <div className="flex flex-wrap gap-2">
             {specialItems[currentItem].tags.map((tag, index) => (
-              <span 
-                key={index} 
+              <span
+                key={index}
                 className="bg-gray-800 text-white px-3 py-2 rounded-lg text-sm"
               >
                 {tag}
@@ -95,14 +130,14 @@ const Achievement = () => {
 
         {/* Navigation Buttons */}
         <div className="flex gap-4">
-          <button 
-            onClick={prevItem} 
+          <button
+            onClick={prevItem}
             className="bg-white hover:bg-gray-800 hover:text-white text-gray-800 px-6 py-3 rounded-lg transition-colors duration-300"
           >
             <FaChevronLeft />
           </button>
-          <button 
-            onClick={nextItem} 
+          <button
+            onClick={nextItem}
             className="bg-white hover:bg-gray-800 hover:text-white text-gray-800 px-6 py-3 rounded-lg transition-colors duration-300"
           >
             <FaChevronRight />

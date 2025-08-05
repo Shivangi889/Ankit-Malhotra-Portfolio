@@ -160,7 +160,7 @@ function ProjectDetails({ project, onBack }) {
             </div>
 
             {/* Actions */}
-            <section>
+            {/* <section>
               <h3 className="text-xl font-bold mb-4">Explore More</h3>
               <div className="space-y-3">
                 <button className="w-full bg-white text-black hover:bg-gray-200 px-4 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
@@ -172,7 +172,7 @@ function ProjectDetails({ project, onBack }) {
                   <span>Live Demo</span>
                 </button>
               </div>
-            </section>
+            </section> */}
 
             {/* Project Stats */}
             <section>

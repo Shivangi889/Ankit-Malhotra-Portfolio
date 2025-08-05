@@ -7,7 +7,7 @@ import Header from './components/Header';
 import Hero from './pages/Home';
 import Projects from './pages/Projects';
 import Hobbies from './pages/Hobbies';
-
+import Contact from './pages/Contact';
 
 
 const LoadingFallback = () => (
@@ -44,12 +44,12 @@ export default function App() {
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/hobbies" element={<Hobbies/>} />
+          <Route path="/mysandbox" element={<Hobbies/>} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/project" element={<Projects/>} />
-          {/* <Route path="/contact" element={
-            <Contact scrollToFooter={handleScrollToFooter} />
-          } /> */}
+          <Route path="/contact" element={
+            <Contact/>
+          } />
         </Routes>
       </Suspense>
       <div ref={footerRef}> {/* Wrap Footer with ref */}

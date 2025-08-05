@@ -30,7 +30,7 @@ function Testimonials() {
             </div>
         ),
         customPaging: () => (
-            <div className="w-3 h-3 mx-1 rounded-full bg-gray-300"></div>
+            <div className="w-2 h-2 md:w-3 md:h-3 mx-1 rounded-full bg-gray-300"></div>
         ),
     };
 
@@ -45,49 +45,29 @@ function Testimonials() {
     return (
         <>
             {testimonialsData.length > 0 && (
-                <div
-                    className="flex flex-col items-center justify-center min-h-screen py-16 px-4 bg-black"
-                >
-                    <div className="text-center mb-8">
-                        <h1
-                            className="text-4xl text-white md:text-5xl font-bold"
-                        >
+                <div className="flex flex-col items-center justify-center min-h-screen py-8 md:py-16 px-4 sm:px-6 bg-black">
+                    <div className="text-center mb-6 md:mb-8">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
                             Testimonials
                         </h1>
                     </div>
 
-                    <div className="relative w-full max-w-5xl">
-                        <FaQuoteLeft
-                            className="absolute text-white top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-5xl md:text-6xl opacity-50"
-                        />
+                    <div className="relative w-full max-w-4xl lg:max-w-5xl">
+                        <FaQuoteLeft className="absolute text-white top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-4xl sm:text-5xl md:text-6xl opacity-50" />
 
-                        <div
-                            className="relative w-full"
-                        >
+                        <div className="relative w-full">
                             <Slider {...settings} ref={sliderRef}>
                                 {testimonialsData.map((test) => (
-                                    <div key={test.id} className="px-4 py-8">
+                                    <div key={test.id} className="px-2 sm:px-4 py-6 md:py-8">
                                         <div className="flex flex-col items-center">
-                                            {/* <div
-                                                className="w-24 bg-white h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center shadow-md z-10"
-                                            >
-                                                <img
-                                                    src={test.image}
-                                                    alt={test.name}
-                                                    className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover"
-                                                />
-                                            </div> */}
-
-                                            <div
-                                                className="w-full bg-white md:w-5/6 lg:w-4/5 rounded-[200px] md:rounded-[100px] p-8 pt-16 mt-12 shadow-md"
-                                            >
-                                                <p className="italic text-lg md:text-xl mb-6 px-4">
+                                            <div className="w-full bg-white sm:w-11/12 md:w-5/6 lg:w-4/5 rounded-[20px] sm:rounded-[50px] md:rounded-[100px] p-6 sm:p-8 pt-12 sm:pt-16 mt-8 sm:mt-12 shadow-md">
+                                                <p className="italic text-base sm:text-lg md:text-xl mb-4 sm:mb-6 px-2 sm:px-4">
                                                     {test.text}
                                                 </p>
-                                                <h1 className="text-xl md:text-2xl font-semibold">
+                                                <h1 className="text-lg sm:text-xl md:text-2xl font-semibold">
                                                     {test.name}
                                                 </h1>
-                                                <h4 className="text-base md:text-lg">
+                                                <h4 className="text-sm sm:text-base md:text-lg text-gray-600">
                                                     {test.title}
                                                 </h4>
                                             </div>
@@ -97,22 +77,22 @@ function Testimonials() {
                             </Slider>
 
                             <button
-                                className="hidden bg-white md:flex absolute top-1/2 left-4 transform -translate-y-1/2 w-14 h-14 rounded-full items-center justify-center shadow-lg"
+                                className="hidden sm:flex absolute top-1/2 left-2 md:left-4 transform -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 rounded-full items-center justify-center shadow-lg bg-white hover:bg-gray-100 transition-colors duration-200"
                                 onClick={gotoPrev}
                             >
                                 <FaArrowLeft
                                     aria-label="Previous testimonial"
-                                    className="text-xl text-black"
+                                    className="text-lg md:text-xl text-black"
                                 />
                             </button>
 
                             <button
-                                className="hidden bg-white md:flex absolute top-1/2 right-4 transform -translate-y-1/2 w-14 h-14 rounded-full items-center justify-center shadow-lg"
+                                className="hidden sm:flex absolute top-1/2 right-2 md:right-4 transform -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 rounded-full items-center justify-center shadow-lg bg-white hover:bg-gray-100 transition-colors duration-200"
                                 onClick={gotoNext}
                             >
                                 <FaArrowRight
                                     aria-label="Next testimonial"
-                                    className="text-xl text-black"
+                                    className="text-lg md:text-xl text-black"
                                 />
                             </button>
                         </div>

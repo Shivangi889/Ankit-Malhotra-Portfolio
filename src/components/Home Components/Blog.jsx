@@ -20,16 +20,16 @@ function Blog() {
                 {blogData.map((blog) => (
                     <div 
                         key={blog.id} 
-                        className="relative border-2 border-black rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl"
+                        className="relative flex-1 border-2 border-black rounded-[20px] overflow-hidden group p-4"
                     >
                         <div className="relative overflow-hidden rounded-t-xl">
                             <img
                                 src={blog.image}
                                 alt={blog.title}
-                                className="w-full h-80 object-cover transition-transform duration-300 hover:brightness-75 hover:scale-105"
+                                className="w-full h-80 object-cover rounded-[20px] mb-4 transition duration-300 group-hover:brightness-75 group-hover:scale-105 group-active:brightness-75 group-active:scale-105"
                             />
                             
-                            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-300 p-4">
+                            <div className="absolute  inset-0 flex flex-col items-center justify-center  bg-black/50 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition duration-300 p-4">
                                 <p className="text-white text-base font-medium mb-4 px-4">
                                     {blog.description}
                                 </p>

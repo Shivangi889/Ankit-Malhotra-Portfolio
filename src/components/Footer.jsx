@@ -133,7 +133,7 @@ const Footer = () => {
                              Projects
                             </Link>
                             <Link
-                                to="/hobbies"
+                                to="/mysandbox"
                                 className="hover:text-white text-white transition-colors duration-200 flex items-center gap-2 group"
                             >
                                 <span className="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition"></span>
@@ -163,7 +163,7 @@ const Footer = () => {
 
                         <div className="flex gap-4 mt-4">
                             <a
-                                href="https://www.linkedin.com/in/bhatiapooja43"
+                                href="https://www.linkedin.com/in/malhotra-ankit/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition-all duration-300 hover:-translate-y-1"
@@ -172,14 +172,14 @@ const Footer = () => {
                                 <Linkedin size={20} className="text-gray-300 hover:text-white" />
                             </a>
                             <a
-                                href="https://mail.google.com/mail/?view=cm&to=pooja.bhatia@email.ucr.edu"
+                                  href="https://mail.google.com/mail/?view=cm&to=amalh017@ucr.edu"
                                 className="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition-all duration-300 hover:-translate-y-1"
                                 aria-label="Email"
                             >
                                 <Mail size={20} className="text-gray-300 hover:text-white" />
                             </a>
                             <a
-                                href="https://github.com/bhatia-pooja"
+                                href="https://github.com/MalhotraAnkit97"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition-all duration-300 hover:-translate-y-1"
@@ -189,7 +189,7 @@ const Footer = () => {
                             </a>
                         </div>
 
-                        <div className="mt-6">
+                        {/* <div className="mt-6">
                             <button
                                 onClick={scrollToContact}
                                 className="inline-flex items-center gap-2 text-white hover:text-gray-300 font-medium transition-colors"
@@ -197,7 +197,7 @@ const Footer = () => {
                                 Start a conversation
                                 <ArrowRight className="w-4 h-4" />
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 

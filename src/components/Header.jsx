@@ -9,7 +9,7 @@ const Header = () => {
   const navItems = [
     { path: '/', label: 'Home' },
     { path: '/project', label: 'Projects' },
-    { path: '/hobbies', label: 'My Sandbox' },
+    { path: '/mysandbox', label: 'My Sandbox' },
     // { path: '/resume', label: 'Resume' },
     { path: '/contact', label: 'Contact Me' }
   ];
@@ -60,8 +60,8 @@ const Header = () => {
               to={item.path}
               onClick={() => setIsMenuOpen(false)}
               className={`text-sm font-medium font-roboto transition-all ${location.pathname === item.path
-                ? 'text-[#fff27d] underline'
-                : 'text-gray-200 hover:text-[#fff27d]'
+                ? 'text-[#ffffff] underline'
+                : 'text-gray-200 hover:text-[#ffffff]'
                 }`}
             >
               {item.label}

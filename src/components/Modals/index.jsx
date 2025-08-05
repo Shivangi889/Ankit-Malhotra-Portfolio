@@ -7,13 +7,13 @@ export const InfoModal = ({ title, content, image, onClose }) => {
         return text.split('\n').map((line, index) => {
             if (line.trim().startsWith('-')) {
                 return (
-                    <li key={index} className="ml-4 mb-2 text-slate-700">
+                    <li key={index} className="ml-4 mb-2 text-slate-100">
                         {line.trim().substring(1).trim()}
                     </li>
                 );
             }
             return line.trim() ? (
-                <p key={index} className="mb-4 text-slate-700 leading-relaxed">
+                <p key={index} className="mb-4 text-slate-200 leading-relaxed">
                     {line.trim()}
                 </p>
             ) : null;
@@ -21,18 +21,18 @@ export const InfoModal = ({ title, content, image, onClose }) => {
     };
 
     return (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-            <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
+        <div className="fixed inset-0 bg-red backdrop-blur-sm flex items-center justify-center p-4 z-50">
+            <div className="bg-black rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
                 {/* Header */}
                 <div className="flex justify-between items-center p-6 border-b border-slate-200">
-                    <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+                    <h2 className="text-2xl md:text-3xl font-bold text-white">
                         {title}
                     </h2>
                     <button
                         onClick={onClose}
                         className="p-2 hover:bg-slate-100 rounded-full transition-colors duration-200"
                     >
-                        <X className="w-6 h-6 text-slate-500" />
+                        <X className="w-6 h-6 text-slate-100" />
                     </button>
                 </div>
 
