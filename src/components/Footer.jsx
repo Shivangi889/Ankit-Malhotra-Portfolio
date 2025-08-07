@@ -83,7 +83,7 @@ const Footer = () => {
                                 value={formData.name}
                                 onChange={handleChange}
                                 placeholder="Your Name"
-                                className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+                                className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:ring-2 focus:gray-yellow-400 focus:outline-none"
                                 required
                             />
                             <input
@@ -92,7 +92,7 @@ const Footer = () => {
                                 value={formData.email}
                                 onChange={handleChange}
                                 placeholder="Your Email"
-                                className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+                                className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:ring-2 focus:gray-yellow-400 focus:outline-none"
                                 required
                             />
                             <textarea
@@ -101,13 +101,13 @@ const Footer = () => {
                                 onChange={handleChange}
                                 placeholder="Your Message"
                                 rows="3"
-                                className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+                                className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-gray-400 focus:outline-none"
                                 required
                             ></textarea>
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="w-full py-3 bg-white hover:bg-gray-900 hover:text-white text-black font-medium rounded-lg transition flex items-center justify-center gap-2"
+                                className="w-full py-3 bg-white hover:bg-gray-400 hover:text-white text-black font-medium rounded-lg transition flex items-center justify-center gap-2"
                             >
                                 {isSubmitting ? 'Sending...' : 'Send Message'}
                             </button>
@@ -123,14 +123,14 @@ const Footer = () => {
                                 className="hover:text-white text-white transition-colors duration-200 flex items-center gap-2 group"
                             >
                                 <span className="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition"></span>
-                                About Me
+                                Home
                             </Link>
                             <Link
                                 to="/project"
                                 className="hover:text-white text-white transition-colors duration-200 flex items-center gap-2 group"
                             >
                                 <span className="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition"></span>
-                             Projects
+                                Projects
                             </Link>
                             <Link
                                 to="/mysandbox"
@@ -172,7 +172,8 @@ const Footer = () => {
                                 <Linkedin size={20} className="text-gray-300 hover:text-white" />
                             </a>
                             <a
-                                  href="https://mail.google.com/mail/?view=cm&to=amalh017@ucr.edu"
+                                href="https://mail.google.com/mail/?view=cm&to=amalh017@ucr.edu"
+                                target="_blank"
                                 className="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition-all duration-300 hover:-translate-y-1"
                                 aria-label="Email"
                             >

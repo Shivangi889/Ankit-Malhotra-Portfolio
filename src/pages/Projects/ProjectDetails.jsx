@@ -14,6 +14,8 @@ import {
   Filter,
   ArrowLeft
 } from 'lucide-react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { projects } from '../../Data/HeroSectionData';
 
 const techIcons = {
   'Python': Code,
@@ -36,7 +38,30 @@ const techIcons = {
   'Close.io APIs': ExternalLink
 };
 
-function ProjectDetails({ project, onBack }) {
+function ProjectDetails() {
+
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  const projectId = Number(id);
+
+  const project = projects.find(p => p.id === projectId);
+
+  if (!project) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-4">Project Not Found</h1>
+          <button
+            onClick={() => navigate('/project')}
+            className="bg-white text-[#000] border hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+          >
+            Back to Projects
+          </button>
+        </div>
+      </div>
+    );
+  }
   const IconComponent = project.icon;
 
   const getTechIcon = (tech) => {
@@ -50,7 +75,7 @@ function ProjectDetails({ project, onBack }) {
       <div className="bg-black border-b border-gray-800">
         <div className="max-w-6xl mx-auto px-6 py-6">
           <button
-            onClick={onBack}
+            onClick={()=>navigate('/project')}
             className="flex items-center gap-2 text-white hover:text-white transition-colors mb-4"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -61,7 +86,7 @@ function ProjectDetails({ project, onBack }) {
               <IconComponent className="w-8 h-8 text-black" />
             </div>
             <div>
-              <h1 className="text-3xl lg:text-4xl font-bold mb-2">{project.title}</h1>
+              <h1 className="text-3xl lg:text-4xl font-bold mb-2 text-white">{project.title}</h1>
               <p className="text-white text-lg mb-4">{project.role}</p>
               <span className="bg-gray-900 text-white px-3 py-1 rounded-full text-sm">
                 {project.category}

@@ -169,7 +169,7 @@ const Hobbies = () => {
 
             {/* Content */}
             <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-              <div className="backdrop-blur-sm bg-black/50 p-6 rounded-lg border border-white/10 transform transition-all duration-500 group-hover:translate-y-0 translate-y-10">
+              <div className=" bg-black/5 p-6 rounded-lg border border-white/10 transform transition-all duration-500 group-hover:translate-y-0 group-hover:bg-black/50 group-hover:border-white/50 translate-y-10">
                 <div className="flex items-center gap-3 mb-3">
                   <div className=" p-2 rounded-full">
                     {getHobbyIcon(hobby.id)}
