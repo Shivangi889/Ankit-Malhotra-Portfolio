@@ -2,7 +2,7 @@ import resume from '../assets/pdf/resume.pdf'
 import profile from '../assets/images/profile.jpeg'
 
 import Post1 from "../assets/images/Ankit's post Linkedin.jpeg";
-import Post2 from "../assets/images/UCR.jpg";
+import Post2 from "../assets/images/UCR.JPG";
 import Post3 from "../assets/images/STORED POWER TECHNOLOGY INC..jpeg"
 import project from "../assets/images/download.jpeg"
 
