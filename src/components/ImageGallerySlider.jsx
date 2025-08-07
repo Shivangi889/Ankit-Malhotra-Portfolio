@@ -29,7 +29,7 @@ import img19 from "../assets/images/IMG_8013.webp";
 import img20 from "../assets/images/IMG_8698.webp";
 import img21 from "../assets/images/IMG_8727.webp";
 import img22 from "../assets/images/IMG_8834.webp";
-import img23 from "../assets/images/industry.jpeg";
+import img23 from "../assets/images/industry.JPEG";
 import img24 from "../assets/images/lxvczgxig1qc00umut7t.webp";
 
 
