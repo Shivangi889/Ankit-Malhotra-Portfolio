@@ -53,6 +53,7 @@ const ImageCarousel = () => {
         modules={[Autoplay]}
         className="w-full px-4"
         breakpoints={{
+          0: { slidesPerView: 1 },       // default for very small screens
           640: { slidesPerView: 2 },
           768: { slidesPerView: 3 },
           1024: { slidesPerView: 4 },
