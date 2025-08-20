@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import ProjectDetails from './pages/Projects/ProjectDetails';
 import ImageGallerySlider from './components/ImageGallerySlider';
 import ImageCarousel from './components/ImageGallerySlider';
+import Experience from './components/Home Components/Experience';
 
 
 const LoadingFallback = () => (
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="/mysandbox" element={<Hobbies />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/project" element={<Projects />} />
+          <Route path="/experience" element={<Experience/>}/>
           <Route path="/project/:id" element={<ProjectDetails />} />
           <Route path="/contact" element={
             <Contact scrollToFooter={handleScrollToFooter} />
