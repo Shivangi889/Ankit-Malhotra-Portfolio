@@ -17,6 +17,7 @@ import {
 
 import { projects } from '../../Data/HeroSectionData'
 import ProjectDetails from './ProjectDetails';
+import { useNavigate } from 'react-router-dom';
 
 const techIcons = {
   'Python': Code,
@@ -41,9 +42,13 @@ const techIcons = {
 
 const categories = ["All", "AI/ML", "Healthcare", "Business Intelligence", "FinTech", "Data Analysis", "Sustainability"];
 
-
-
 function Projects() {
+  const navigate = useNavigate();
+
+  const handleProjectClick = (projectId) => {
+    navigate(`/project/${projectId}`);
+  };
+
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -96,22 +101,24 @@ function Projects() {
 
       {/* Filter Section */}
       <section className="max-w-7xl mx-auto px-6 py-12">
-        <div className="flex items-center justify-center mb-12">
-          <div className="bg-black border border-black rounded-full p-2">
-            <div className="flex items-center gap-2">
-              <Filter className="w-4 h-4 text-gray-400 ml-2" />
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${selectedCategory === category
-                    ? 'bg-white text-black'
-                    : 'text-gray-400 hover:text-white hover:bg-gray-800'
-                    }`}
-                >
-                  {category}
-                </button>
-              ))}
+        <div className="flex flex-col items-center mb-12">
+          <div className="w-full max-w-4xl">
+            <div className="bg-black border border-black rounded-full p-1 overflow-x-auto">
+              <div className="flex items-center min-w-max">
+                <Filter className="w-4 h-4 text-gray-400 mx-3" />
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${selectedCategory === category
+                      ? 'bg-white text-black'
+                      : 'text-gray-400 hover:text-white hover:bg-gray-800'
+                      }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -123,8 +130,7 @@ function Projects() {
             return (
               <div
                 key={project.id}
-                className="group relative bg-black border border-gray-800 rounded-2xl hover:border-gray-700 transition-all duration-500 overflow-hidden cursor-pointer"
-                onClick={() => setSelectedProject(project)}
+                className="group relative bg-black border border-gray-800 rounded-2xl hover:border-gray-700 transition-all duration-500 overflow-hidden cursor-pointer flex flex-col h-full"
               >
                 {/* Header */}
                 <div className="bg-white text-black p-6">
@@ -143,47 +149,56 @@ function Projects() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 bg-black ">
-                  <p className="text-gray-300 mb-4 leading-relaxed text-sm">
-                    {project.description}
-                  </p>
-
-                  {/* Impact */}
-                  <div className="bg-gray-800 border border-gray-700 rounded-lg p-3 mb-4">
-                    <p className="text-gray-300 text-xs">
-                      <span className="inline-block w-2 h-2 bg-white rounded-full mr-2"></span>
-                      Impact: {project.impact}
+                <div className="p-6 bg-black flex-grow flex flex-col">
+                  <div className="flex-grow">
+                    <p className="text-gray-300 mb-4 leading-relaxed text-sm">
+                      {project.description}
                     </p>
-                  </div>
 
-                  {/* Technologies */}
-                  <div className="mb-6  ">
-                    <h4 className="text-sm font-semibold text-white mb-2">Technologies Used</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => {
-                        const TechIcon = getTechIcon(tech);
-                        return (
-                          <div
-                            key={tech}
-                            className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 border border-gray-700 px-2 py-1 rounded-md text-xs font-medium text-gray-300 transition-colors"
-                          >
-                            <TechIcon className="w-3 h-3" />
-                            <span>{tech}</span>
-                          </div>
-                        );
-                      })}
+                    {/* Impact */}
+                    <div className="bg-gray-800 border border-gray-700 rounded-lg p-3 mb-4">
+                      <p className="text-gray-300 text-xs">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mr-2"></span>
+                        Impact: {project.impact}
+                      </p>
+                    </div>
+
+                    {/* Technologies */}
+                    <div className="mb-6">
+                      <h4 className="text-sm font-semibold text-white mb-2">Technologies Used</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech) => {
+                          const TechIcon = getTechIcon(tech);
+                          return (
+                            <div
+                              key={tech}
+                              className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 border border-gray-700 px-2 py-1 rounded-md text-xs font-medium text-gray-300 transition-colors"
+                            >
+                              <TechIcon className="w-3 h-3" />
+                              <span>{tech}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex gap-2">
-                    <button className="flex-1 bg-white hover:bg-gray-200 text-black px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2 group/btn">
-                      <span>Learn More</span>
-                      <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
-                    <button className="bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-300 px-3 py-2 rounded-lg text-sm transition-colors flex items-center justify-center">
-                      <Github className="w-4 h-4" />
-                    </button>
+                  {/* Action Buttons - Fixed at bottom */}
+                  <div className="mt-auto">
+                    <div className="flex gap-2">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleProjectClick(project.id);
+                        }}
+                        className="flex-1 bg-white hover:bg-gray-200 text-black px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2 group/btn">
+                        <span>Learn More</span>
+                        <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </button>
+                      <button className="bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-300 px-3 py-2 rounded-lg text-sm transition-colors flex items-center justify-center">
+                        <Github className="w-4 h-4" />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -213,39 +228,15 @@ function Projects() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-black hover:bg-gray-200 px-8 py-4 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2 group">
                 <Github className="w-5 h-5" />
-               
-                <a href="https://github.com/MalhotraAnkit97"> <span>Visit GitHub Portfolio</span></a>
+                <a href="https://github.com/MalhotraAnkit97">
+                  <span>Visit GitHub Portfolio</span>
+                </a>
                 <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
-             
             </div>
           </div>
         </div>
       </section>
-
-      {/* Stats Footer */}
-      {/* <section className="bg-black border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-white mb-2">10+</div>
-              <div className="text-gray-400 font-medium">ML Models Deployed</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-white mb-2">82%</div>
-              <div className="text-gray-400 font-medium">Best Model Accuracy</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-white mb-2">6+</div>
-              <div className="text-gray-400 font-medium">Industries Impacted</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-white mb-2">3+</div>
-              <div className="text-gray-400 font-medium">Leadership Roles</div>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </div>
   );
 }

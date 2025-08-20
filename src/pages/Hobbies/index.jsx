@@ -1,10 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import { Music, Gamepad, Trophy, Workflow, Briefcase, Users, GitMerge } from 'lucide-react';
 import { Mic } from 'lucide-react';
-import img from '../../assets/profile.jpeg'
-import img1 from '../../assets/STORED POWER TECHNOLOGY INC..jpeg'
+import img from '../../assets/images/soccer.webp'
+import img1 from '../../assets/images/IMG_5721.webp'
 import img2 from '../../assets/images/IMG_3705.webp'
-
+import automation from "../../assets/images/IMG_5170.webp"
+import entrepreneurship from "../../assets/images/IMG_8013.webp"
+import mentorship from "../../assets/images/IMG_0576.webp"
+import opensource from "../../assets/images/IMG_4302.webp"
+import industry from "../../assets/images/industry.JPEG"
 
 const hobbiesData = [
   {
@@ -21,7 +25,7 @@ const hobbiesData = [
     title: 'Strategic Worlds and Team Dynamics',
     summary: 'Exploring competitive gaming landscapes',
     description: "I'm an avid gamer, delving into the strategic landscapes of titles like Rocket League, Call of Duty, and Marvel Rivals. Beyond the sheer enjoyment, gaming has honed my strategic thinking and reinforced the importance of teamwork. These virtual challenges have translated into real-world problem-solving skills and collaboration abilities.",
-    imageUrl: img,
+    imageUrl: img1,
     icon: <Gamepad className="w-8 h-8" />,
     achievements: []
   },
@@ -30,7 +34,7 @@ const hobbiesData = [
     title: 'The Emotion of Soccer',
     summary: 'A profound passion since childhood',
     description: 'Soccer has held a special place in my heart since childhood. I played as a goalkeeper and in defense, and had the honor of representing my state, Maharashtra, in India. For me, soccer transcends a mere game; it\'s a profound emotion. This passion has significantly contributed to developing my strategic acumen and teamwork abilities on and off the field.',
-    imageUrl: img1,
+    imageUrl: img,
     icon: <Trophy className="w-8 h-8" />,
     achievements: [
       'Represented Maharashtra state in national competitions'
@@ -41,7 +45,7 @@ const hobbiesData = [
     title: 'The Art of Automation',
     summary: 'Creating intelligent, streamlined solutions',
     description: 'I have a strong inclination towards automating processes, believing that many modern tasks can benefit from streamlined, human-touch-minimal solutions. A personal project involved automating my coffee machine to begin brewing as soon as Alexa detects I\'ve woken up. This passion extends to professional applications where I seek to optimize workflows through intelligent automation.',
-    imageUrl: img1,
+    imageUrl: automation,
     icon: <Workflow className="w-8 h-8" />,
     achievements: [
       'Developed smart home automation systems',
@@ -53,7 +57,7 @@ const hobbiesData = [
     title: 'Innovative Ventures',
     summary: 'Building solutions through entrepreneurship',
     description: 'I successfully founded and currently operate Qimension, a 3D printing company based in Hyderabad, India. Built from the ground up, this venture has garnered support from the government. This experience has taught me invaluable lessons in innovation, perseverance, and business strategy.',
-    imageUrl: img1,
+    imageUrl:entrepreneurship,
     icon: <Briefcase className="w-8 h-8" />,
     achievements: [
       'Founder of Qimension (3D printing company)',
@@ -65,7 +69,7 @@ const hobbiesData = [
     title: 'Adaptive Mentorship',
     summary: 'Sharing knowledge and guiding others',
     description: 'I possess a strong aptitude for mentoring, grounded in the ability to tailor my teaching approach to meet the unique needs of each learner. Whether simplifying intricate subjects or reinforcing core concepts, I ensure comprehensive understanding through breaking down challenges and cultivating supportive learning environments.',
-    imageUrl: img,
+    imageUrl: mentorship,
     icon: <Users className="w-8 h-8" />,
     achievements: [
       'Speaker for AIS & ACM club at UCR',
@@ -74,11 +78,11 @@ const hobbiesData = [
     ]
   },
   {
-    id: 'open-source',
+    id: 'opensource',
     title: 'Open Source & Collaborative Development',
     summary: 'Building something larger than any individual could create',
     description: 'I am a firm believer in the power of collaborative innovation, which is why I am an active contributor to several open-source projects, particularly within the AI domain. My passion lies in helping to build something larger than any single individual could create. This involves a comprehensive skill set that spans the full project lifecycle—from high-level strategizing and hands-on coding to meticulous troubleshooting and optimization.',
-    imageUrl: img, // You might want to use a different image for this
+    imageUrl: opensource, // You might want to use a different image for this
     icon: <GitMerge className="w-8 h-8" />, // Using GitMerge icon for open source
     achievements: [
       'Active contributor to multiple AI open-source projects',
@@ -86,12 +90,12 @@ const hobbiesData = [
       'Commitment to advancing technology through collective development'
     ]
   }, {
-    id: 'industry-engagement',
+    id: 'industryEngagement',
     title: 'Industry Engagement & Thought Leadership',
     summary: 'Shaping conversations around AI innovation and ethics',
     description: 'I actively contribute to the technology community by sharing insights and shaping conversations around the future of Artificial Intelligence. Organizations frequently invite me to serve in various capacities where I evaluate innovative concepts, discuss emerging trends, and contribute to critical discussions on technology development.',
-    imageUrl: img, // You may want to use a different image
-    icon: <Mic className="w-8 h-8" />, // Using Mic icon for speaking engagements
+    imageUrl:industry,
+    icon: <Mic className="w-8 h-8" />, 
     achievements: [
       'Invited Speaker for AIS & ACM club at UCR on AI technology',
       'Judge for innovation competitions at AIS Club UCR and Business Strategy Club',
@@ -125,7 +129,12 @@ const Hobbies = () => {
       music: <Music className="w-8 h-8" />,
       gaming: <Gamepad className="w-8 h-8" />,
       soccer: <Trophy className="w-8 h-8" />,
-      automation: <Workflow className="w-8 h-8" />
+      automation: <Workflow className="w-8 h-8" />,
+      entrepreneurship:<Briefcase className="w-8 h-8" />,
+      mentorship:<Users className="w-8 h-8" />,
+      opensource: <GitMerge className="w-8 h-8" />,
+      industryEngagement:<Mic className="w-8 h-8" />
+
     };
     return icons[id] || null;
   };
@@ -160,7 +169,7 @@ const Hobbies = () => {
 
             {/* Content */}
             <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-              <div className="backdrop-blur-sm bg-black/50 p-6 rounded-lg border border-white/10 transform transition-all duration-500 group-hover:translate-y-0 translate-y-10">
+              <div className=" bg-black/5 p-6 rounded-lg border border-white/10 transform transition-all duration-500 group-hover:translate-y-0 group-hover:bg-black/50 group-hover:border-white/50 translate-y-10">
                 <div className="flex items-center gap-3 mb-3">
                   <div className=" p-2 rounded-full">
                     {getHobbyIcon(hobby.id)}

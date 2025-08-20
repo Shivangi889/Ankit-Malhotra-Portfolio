@@ -7,7 +7,11 @@ import Header from './components/Header';
 import Hero from './pages/Home';
 import Projects from './pages/Projects';
 import Hobbies from './pages/Hobbies';
-
+import Contact from './pages/Contact';
+import ProjectDetails from './pages/Projects/ProjectDetails';
+import ImageGallerySlider from './components/ImageGallerySlider';
+import ImageCarousel from './components/ImageGallerySlider';
+import Experience from './components/Home Components/Experience';
 
 
 const LoadingFallback = () => (
@@ -22,36 +26,32 @@ const LoadingFallback = () => (
 
 export default function App() {
 
-  const aboutRef = useRef(null);
   const footerRef = useRef(null);
-
-  const handleScrollToAbout = () => {
-    if (aboutRef.current) {
-      aboutRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  // Add this function to scroll to footer
   const handleScrollToFooter = () => {
     if (footerRef.current) {
       footerRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+
   return (
     <Router>
       <ScrollToTop />
-      <Header onAboutClick={handleScrollToAbout} />
+      <Header />
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/hobbies" element={<Hobbies/>} />
+          <Route path="/mysandbox" element={<Hobbies />} />
           <Route path="/resume" element={<Resume />} />
-          <Route path="/project" element={<Projects/>} />
-          {/* <Route path="/contact" element={
+          <Route path="/project" element={<Projects />} />
+          <Route path="/experience" element={<Experience/>}/>
+          <Route path="/project/:id" element={<ProjectDetails />} />
+          <Route path="/contact" element={
             <Contact scrollToFooter={handleScrollToFooter} />
-          } /> */}
+          } />
         </Routes>
       </Suspense>
+        <ImageCarousel />
       <div ref={footerRef}> {/* Wrap Footer with ref */}
         <Footer />
       </div>

@@ -8,8 +8,6 @@ import Mentor from "../../assets/Mentorship in Addiction Recovery _ AKUA Mind Bo
 import Business from "../../assets/Interpretación de gráficos y tablas financieras en inglés.jpeg";
 import Financial from "../../assets/When it comes to establishing a career in Finance….jpeg";
 
-
-
 const AreasWorkInterest = () => {
   const [activeTab, setActiveTab] = useState("data-science");
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -22,6 +20,12 @@ const AreasWorkInterest = () => {
       icon: <Database size={24} />,
       color: "blue-500",
       imageUrl: Data,
+      tags: [
+        "Data Mining",
+        "Predictive Modeling",
+        "Data Visualization",
+        "ETL Pipelines"
+      ]
     },
     {
       id: "ai-ml",
@@ -30,6 +34,12 @@ const AreasWorkInterest = () => {
       icon: <Brain size={24} />,
       color: "purple-500",
       imageUrl: Ai,
+      tags: [
+        "Neural Networks",
+        "NLP",
+        "Computer Vision",
+        "Recommendation Systems"
+      ]
     },
     {
       id: "product-analysis",
@@ -38,6 +48,12 @@ const AreasWorkInterest = () => {
       icon: <Code size={24} />,
       color: "emerald-500",
       imageUrl: Product,
+      tags: [
+        "A/B Testing",
+        "User Behavior",
+        "Feature Metrics",
+        "Conversion Rates"
+      ]
     },
     {
       id: "statistics",
@@ -46,6 +62,12 @@ const AreasWorkInterest = () => {
       icon: <BarChart size={24} />,
       color: "orange-500",
       imageUrl: Statistics,
+      tags: [
+        "Hypothesis Testing",
+        "Regression Analysis",
+        "Bayesian Methods",
+        "Experimental Design"
+      ]
     },
     {
       id: "training",
@@ -54,6 +76,12 @@ const AreasWorkInterest = () => {
       icon: <Briefcase size={24} />,
       color: "red-500",
       imageUrl: Mentor,
+      tags: [
+        "Workshops",
+        "Technical Coaching",
+        "Curriculum Design",
+        "Team Upskilling"
+      ]
     },
     {
       id: "business-growth",
@@ -62,14 +90,26 @@ const AreasWorkInterest = () => {
       icon: <TrendingUp size={24} />,
       color: "indigo-500",
       imageUrl: Business,
+      tags: [
+        "Market Trends",
+        "Customer Segmentation",
+        "Revenue Optimization",
+        "Competitive Analysis"
+      ]
     },
     {
       id: "financial-analytics",
       title: "Financial Analytics",
       description: "Analyzing financial statements, trends, and ratios to assess company health. Supports budgeting, forecasting, and investment decisions by delivering accurate models that optimize cash flow, profitability, and risk management.",
-      icon: <DollarSign size={24} />,
       color: "green-500",
+      icon: <DollarSign size={24} />,
       imageUrl: Financial,
+      tags: [
+        "Risk Assessment",
+        "Investment Analysis",
+        "Financial Modeling",
+        "Cost Optimization"
+      ]
     },
   ];
 
@@ -85,8 +125,19 @@ const AreasWorkInterest = () => {
 
   const activeArea = areasOfExpertise.find(area => area.id === activeTab) || areasOfExpertise[0];
 
+  // Color mapping for dynamic classes
+  const colorMap = {
+    "blue-500": "bg-blue-500 text-blue-500 bg-blue-500/10",
+    "purple-500": "bg-purple-500 text-purple-500 bg-purple-500/10",
+    "emerald-500": "bg-emerald-500 text-emerald-500 bg-emerald-500/10",
+    "orange-500": "bg-orange-500 text-orange-500 bg-orange-500/10",
+    "red-500": "bg-red-500 text-red-500 bg-red-500/10",
+    "indigo-500": "bg-indigo-500 text-indigo-500 bg-indigo-500/10",
+    "green-500": "bg-green-500 text-green-500 bg-green-500/10",
+  };
+
   return (
-    <section id="expertise" className="py-20 bg-gray-50">
+    <section id="expertise" className="py-20 bg-white">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -99,68 +150,76 @@ const AreasWorkInterest = () => {
 
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="flex overflow-x-auto bg-gray-50 px-2 border-b border-gray-200">
-            {areasOfExpertise.map((area) => (
-              <button
-                key={area.id}
-                onClick={() => handleTabChange(area.id)}
-                className={`flex items-center gap-2 px-4 py-4 whitespace-nowrap transition-colors ${
-                  activeTab === area.id 
-                    ? `text-${area.color} font-semibold`
-                    : "text-gray-500 hover:text-gray-700"
-                }`}
-              >
-                <span>{area.icon}</span>
-                <span>{area.title.split(' ')[0]}</span>
-                {activeTab === area.id && (
-                  <span className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 w-1/2 bg-${area.color} rounded-t`}></span>
-                )}
-              </button>
-            ))}
+            {areasOfExpertise.map((area) => {
+              const active = activeTab === area.id;
+              const colorClass = colorMap[area.color].split(' ');
+              return (
+                <button
+                  key={area.id}
+                  onClick={() => handleTabChange(area.id)}
+                  className={`flex items-center gap-2 px-4 py-4 whitespace-nowrap transition-colors relative ${active
+                      ? `font-semibold ${colorClass[1]}`
+                      : "text-gray-500 hover:text-gray-700"
+                    }`}
+                >
+                  <span>{area.icon}</span>
+                  <span>{area.title.split(' ')[0]}</span>
+                  {active && (
+                    <span
+                      className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 w-1/2 ${colorClass[0]} rounded-t`}
+                    ></span>
+                  )}
+                </button>
+              );
+            })}
           </div>
-          
+
           <div className={`transition-opacity duration-300 ${isTransitioning ? "opacity-0" : "opacity-100"}`}>
             <div className="flex flex-col md:flex-row">
               <div className="w-full md:w-1/2 p-4">
-                <img 
-                  src={activeArea.imageUrl} 
+                <img
+                  src={activeArea.imageUrl}
                   alt={activeArea.title}
                   className="w-full h-auto rounded-lg object-contain"
                 />
               </div>
-              
+
               <div className="w-full md:w-1/2 p-8">
                 <div className="flex items-center mb-6">
-                  <div 
-                    className={`w-14 h-14 rounded-xl flex items-center justify-center bg-${activeArea.color}/20 text-${activeArea.color} mr-4`}
+                  <div
+                    className={`w-14 h-14 rounded-xl flex items-center justify-center ${colorMap[activeArea.color].split(' ')[2]} ${colorMap[activeArea.color].split(' ')[1]} mr-4`}
                   >
                     {activeArea.icon}
                   </div>
                   <h3 className="text-2xl font-bold text-gray-800">{activeArea.title}</h3>
                 </div>
-                
+
                 <div className="h-px bg-gray-200 my-6"></div>
-                
+
                 <p className="text-gray-600 mb-8 leading-relaxed">
                   {activeArea.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2">
-                  {["Analysis", "Research", "Innovation"].map((tag) => (
-                    <span 
-                      key={tag} 
-                      className={`px-3 py-1 rounded-full text-sm font-medium bg-${activeArea.color}/10 text-${activeArea.color}`}
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  {activeArea.tags.map((tag) => {
+                    const colorClass = colorMap[activeArea.color].split(' ');
+                    return (
+                      <span
+                        key={tag}
+                        className={`px-3 py-1 rounded-full text-sm font-medium ${colorClass[2]} ${colorClass[1]}`}
+                      >
+                        {tag}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-16 bg-white rounded-xl shadow-md p-8 max-w-4xl mx-auto text-center">
-          <p className="text-xl italic text-gray-700">
+        <div className="mt-16 bg-black rounded-xl shadow-md p-8 max-w-4xl mx-auto text-center">
+          <p className="text-xl italic text-gray-100">
             "Each of these areas represents my commitment to innovation and my belief in the transformative power of technology."
           </p>
         </div>

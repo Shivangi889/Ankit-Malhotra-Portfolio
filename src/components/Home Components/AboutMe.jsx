@@ -1,45 +1,47 @@
 import React, { useState } from 'react';
 import { InfoModal } from '../Modals';
 
-import img from "../../assets/images/IMG_0576.webp"
+import img from "../../assets/images/more_aboutme.JPG"
 import img1 from "../../assets/images/IMG_3705.webp"
-
+import journey from "../../assets/images/IMG_0576.webp"
+import Do from "../../assets/images/IMG_5134.webp"
+import Value from "../../assets/images/Value.JPEG"
 const data = [
     {
         id: 1,
-        title: '👋 About Me',
+        title: 'About Me',
         content: `Hi, I'm Ankit Malhotra — a Business Analyst, AI Engineer, and Mentor. I thrive at the intersection of data, technology, and innovation, with a passion for using data science and artificial intelligence to solve real-world problems and drive meaningful impact.`,
         image: img
     },
     {
         id: 2,
-        title: '🧠 My Journey',
+        title: ' My Journey',
         content: `My journey began with a deep love for mathematics, especially Statistics and Linear Algebra. That passion naturally evolved into an interest in data analysis and artificial intelligence, leading me to build a multidisciplinary skill set that combines analytical precision with creative problem-solving.`,
-        image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800'
+        image: journey
     },
     {
         id: 3,
-        title: '💼 What I Do',
+        title: ' What I Do',
         content: `Currently, I work as a Manager of Business Research and Analytics, helping organizations leverage data for smarter, more informed decisions. In parallel, I build AI-powered solutions that are practical, ethical, and user-centric.
 
 Some of my key work includes:
 - AI Chatbot for Non-Binary Support: Developed during an internship, this chatbot provides instant therapy-like support to non-binary individuals.
 - UCR Scheduling Assistant: As the Principal AI Engineer, I'm leading the development of an AI-based class scheduling tool to help students streamline course selection at the University of California, Riverside.`,
-        image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800'
+        image: Do
     },
     {
         id: 4,
-        title: '💡 Values & Approach',
+        title: ' Values & Approach',
         content: `I believe the best solutions lie at the crossroads of rigor and empathy. Whether it's advising businesses or mentoring peers, I strive to bring:
 - Analytical depth
 - Human-centered design
 - Technological innovation
 - Collaborative spirit`,
-        image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800'
+        image: Value
     },
     {
         id: 5,
-        title: '🎸 Outside of Work',
+        title: ' Outside of Work',
         content: `When I'm not immersed in models or dashboards, you'll likely find me:
 - Strumming my guitar
 - Deep into a video game strategy
@@ -54,12 +56,12 @@ function InfoCard({ title, onClick }) {
     return (
         <div
             onClick={onClick}
-            className="group cursor-pointer bg-gradient-to-r from-black to-gray-800 p-8 rounded-2xl transition-all duration-500 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 border border-slate-700 hover:border-transparent"
+            className="group cursor-pointer bg-gradient-to-r from-white to-white p-8 rounded-2xl transition-all duration-500 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 border border-slate-200 hover:border-transparent"
         >
-            <h3 className="text-xl font-bold text-white group-hover:text-white transition-colors duration-300">
+            <h3 className="text-xl font-bold text-black group-hover:text-black transition-colors duration-300">
                 {title}
             </h3>
-            <div className="mt-4 w-12 h-1 bg-slate-600 group-hover:bg-white transition-colors duration-300 rounded-full"></div>
+            <div className="mt-4 w-12 h-1 bg-slate-900 group-hover:bg-white transition-colors duration-300 rounded-full"></div>
         </div>
     );
 }
@@ -70,27 +72,27 @@ const AboutMe = () => {
     const cardData = data.slice(1);
 
     return (
-        <div className="bg-gradient-to-b from-slate-50 to-white min-h-screen">
+        <div className="bg-gradient-to-b from-white to-white min-h-screen">
             {/* Header Section */}
             <div className="max-w-7xl mx-auto px-6 py-16">
-                <div className="text-center mb-16">
+                {/* <div className="text-center mb-16">
                     <h1 className="text-5xl md:text-6xl font-bold text-black mb-6">
                         About Me
                     </h1>
                     <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
                         Passionate about transforming data into insights and building AI solutions that make a difference
                     </p>
-                </div>
+                </div> */}
 
                 {/* Main Content Section */}
-                <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-16 border border-slate-200">
+                <div className="bg-black rounded-3xl shadow-xl p-8 md:p-12 mb-16 border border-slate-200">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         {/* Left Content */}
                         <div className="space-y-6">
-                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                                 {mainContent.title}
                             </h2>
-                            <p className="text-lg text-slate-700 leading-relaxed">
+                            <p className="text-lg text-white leading-relaxed">
                                 {mainContent.content}
                             </p>
                             <div className="flex flex-wrap gap-3 mt-8">

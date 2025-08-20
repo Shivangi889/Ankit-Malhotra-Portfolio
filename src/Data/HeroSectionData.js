@@ -1,60 +1,50 @@
 import resume from '../assets/pdf/resume.pdf'
-import profile from '../assets/profile.jpeg'
+import profile from '../assets/images/profile.jpeg'
 
-// import Beta from "../assets/IMG_4291.HEIC"
-// import Speaker from "../assets/IMG_5170 2.HEIC";
-/* eslint-disable */
-import girl1 from '../assets/girl1.svg'
-import girl2 from '../assets/girl2.svg'
-import girl3 from '../assets/girl3.svg'
-import boy1 from '../assets/boy1.svg'
-import boy2 from '../assets/boy2.svg'
-import boy3 from '../assets/boy3.svg'
-import Post1 from "../assets/Ankit's post Linkedin.jpeg";
-import Post2 from "../assets/Business Strategy Club's 2025.jpeg";
-import Post3 from "../assets/STORED POWER TECHNOLOGY INC..jpeg"
-import Bgimg from "../assets/bg.png"
+import Post1 from "../assets/images/Ankit's post Linkedin.jpeg";
+import Post2 from "../assets/images/UCR.JPG";
+import Post3 from "../assets/images/STORED POWER TECHNOLOGY INC..jpeg"
+import project from "../assets/images/download.jpeg"
 
-import { 
-  Brain, 
-  Bot, 
-  TrendingUp, 
-  Sun, 
-  Heart, 
-  Scan, 
-  Users, 
-  Shield, 
-  Music, 
+import {
+  Brain,
+  Bot,
+  TrendingUp,
+  Sun,
+  Heart,
+  Scan,
+  Users,
+  Shield,
+  Music,
   DollarSign,
 } from 'lucide-react';
 
 
 
 export const headerData = {
-    name: 'Ankit  Malhotra',
-    title: "Data Analyst",
-    desciption: "Hi, I’m Ankit Malhotra— a data enthusiast, AI innovator, and lifelong learner with a passion for solving complex problems through the power of technology. From designing AI bots that provide instant therapy to building university scheduling systems, I’ve dedicated my career to creating impactful solutions that improve lives. ",
-    desciption1: "This site is where I bring my journey to life. Here, you’ll find a showcase of my professional work, achievements, and the moments I’ve been privileged to share as a speaker, mentor, and judge at AI events and competitions.",
-    desciption2: "Whether you’re here to explore my portfolio, learn more about my expertise, or discuss a potential collaboration, I invite you to connect and join me on this exciting journey of discovery and innovation.",
-    image: profile,
-    bgimg:Bgimg,
-    resumePdf: resume
+  name: 'Ankit  Malhotra',
+  title: "Data Analyst",
+  desciption: "Hi, I’m Ankit Malhotra— a data enthusiast, AI innovator, and lifelong learner with a passion for solving complex problems through the power of technology. From designing AI bots that provide instant therapy to building university scheduling systems, I’ve dedicated my career to creating impactful solutions that improve lives. ",
+  desciption1: "This site is where I bring my journey to life. Here, you’ll find a showcase of my professional work, achievements, and the moments I’ve been privileged to share as a speaker, mentor, and judge at AI events and competitions.",
+  desciption2: "Whether you’re here to explore my portfolio, learn more about my expertise, or discuss a potential collaboration, I invite you to connect and join me on this exciting journey of discovery and innovation.",
+  image: profile,
+  resumePdf: resume
 }
 
 
 export const socialsData = {
-    github: 'https://github.com/',
-    facebook: 'https://www.facebook.com/',
-    linkedIn: 'https://www.linkedin.com/in',
-    instagram: 'https://www.instagram.com/',
-    codepen: 'https://codepen.io/',
-    twitter: 'https://twitter.com/',
-    reddit: 'https://www.reddit.com/user/',
-    blogger: 'https://www.blogger.com/',
-    medium: 'https://medium.com/@',
-    stackOverflow: 'https://stackoverflow.com/users/',
-    gitlab: 'https://gitlab.com/',
-    youtube: 'https://youtube.com/'
+  github: 'https://github.com/',
+  facebook: 'https://www.facebook.com/',
+  linkedIn: 'https://www.linkedin.com/in',
+  instagram: 'https://www.instagram.com/',
+  codepen: 'https://codepen.io/',
+  twitter: 'https://twitter.com/',
+  reddit: 'https://www.reddit.com/user/',
+  blogger: 'https://www.blogger.com/',
+  medium: 'https://medium.com/@',
+  stackOverflow: 'https://stackoverflow.com/users/',
+  gitlab: 'https://gitlab.com/',
+  youtube: 'https://youtube.com/'
 }
 
 
@@ -69,7 +59,7 @@ export const achievementData = {
       details: `I was deeply honored to receive the Beta Gamma Sigma (BGS) award, recognizing excellence in business studies.`,
       date: '2024',
       field: 'Business',
-    //   image: Beta
+      //   image: Beta
     },
     {
       id: 2,
@@ -77,7 +67,7 @@ export const achievementData = {
       details: `I've had the privilege of being invited as a speaker for a technology (AI) talk by the AIS & ACM club at UCR and serving as a judge for AI pitch competitions hosted by both the AIS Club UCR and the Business Strategy Club (for a Sustainability AI pitch competition).`,
       date: '2023-2024',
       field: 'AI & Technology',
-    //   image: Speaker
+      //   image: Speaker
     },
     {
       id: 3,
@@ -130,20 +120,18 @@ export const achievementData = {
 
 
 export const testimonialsData = [
-    {
-        id: 1,
-        name: 'DebiPrasad Baral',
-        title: 'Co-Founder & CTO, Financepeer (now Leo1)',
-        text: "Ankit Malhotra is an absolute powerhouse of motivation and skill! Working together for 2.5 years was a joy as he showcased brilliant creativity and technical prowess. Ankit not only aced RDBMS optimization but also rocked a 10-month project, flaunting his wizardry in algorithms and mathematics. His kindness and generosity are heartwarming, and paired with his stellar analytical skills, he's truly an invaluable asset. Recommending Ankit is a no-brainer – he's the kind of professional dreams are made of!",
-        image: boy2
-    },
-    {
-        id: 2,
-        name: 'MohanaSundaram R.',
-        title: 'Senior Assistant Professor, VIT University, SCOPE (School of Computer Science Engineering)',
-        text: "Ankit Malhotra is an exceptional professional, showcasing unparalleled skills in problem-solving, technical execution, and leadership. His dedication to academics, coupled with a passion for continuous learning, sets him apart. Ankit's collaborative spirit and outstanding performance in diverse projects make him an invaluable asset. I wholeheartedly recommend Ankit for any academic or professional endeavor; his commitment and expertise speak volumes.",
-        image: girl2
-    }
+  {
+    id: 1,
+    name: 'DebiPrasad Baral',
+    title: 'Co-Founder & CTO, Financepeer (now Leo1)',
+    text: "Ankit Malhotra is an absolute powerhouse of motivation and skill! Working together for 2.5 years was a joy as he showcased brilliant creativity and technical prowess. Ankit not only aced RDBMS optimization but also rocked a 10-month project, flaunting his wizardry in algorithms and mathematics. His kindness and generosity are heartwarming, and paired with his stellar analytical skills, he's truly an invaluable asset. Recommending Ankit is a no-brainer – he's the kind of professional dreams are made of!",
+  },
+  {
+    id: 2,
+    name: 'MohanaSundaram R.',
+    title: 'Senior Assistant Professor, VIT University, SCOPE (School of Computer Science Engineering)',
+    text: "Ankit Malhotra is an exceptional professional, showcasing unparalleled skills in problem-solving, technical execution, and leadership. His dedication to academics, coupled with a passion for continuous learning, sets him apart. Ankit's collaborative spirit and outstanding performance in diverse projects make him an invaluable asset. I wholeheartedly recommend Ankit for any academic or professional endeavor; his commitment and expertise speak volumes.",
+  }
 ]
 
 
@@ -151,47 +139,46 @@ export const testimonialsData = [
 
 
 export const blogData = [
-    {
-        id: 1,
-        title: 'SCRAPING BILLBOARD AND IMDB USING PYTHON SELENIUM',
-        description: 'Still buzzing from the fantastic discussions at the 4th Annual All Advisory Board Meeting at the UCR Career Center on Friday, May 16th! A big thank you to Michelle S. Gomez & Alex Muro for the invitation and for coordinating everything so smoothly.',
-        date: 'May 31, 2025',
-        image: Post1,
-        url: 'https://www.linkedin.com/in/malhotra-ankit/recent-activity/all/'
-    },
-    {
-        id: 2,
-        title: "Business Strategy Club's 2025",
-        description: "It was an honor to serve as a judge for the Business Strategy Club's 2025 Sustainability Case Competition alongside Francisca Reyes, DED, EDP , Pete Navarro and Shan Ramasubramanian The experience was truly fantastic, witnessing teams present incredibly unique and innovative ideas to address real-world sustainability challenges.",
-        date: 'May 02, 2025',
-        image: Post2 ,
-        url: 'https://www.linkedin.com/in/malhotra-ankit/recent-activity/all/'
-    },
-    { 
-        id: 3,
-        title: 'STORED POWER TECHNOLOGY INC. ',
-        description: "Happy to share that I've joined STORED POWER TECHNOLOGY INC. as a Business Analyst!I'm passionate about leveraging technology to drive impactful decisions and help businesses grow, and I'm excited to apply those skills to analyzing sales performance, identifying key trends, and developing strategic recommendations at Stored Power Technology Inc. "
-,
-        date: 'April 04, 2020',
-        image: Post3,
-        url: 'https://www.linkedin.com/in/malhotra-ankit/recent-activity/all'
-    },
-    // {
-    //     id: 4,
-    //     title: 'CHECK INTERNET SPEED FROM THE COMMAND LINE',
-    //     description: 'Want to check your internet speed from the terminal? Here\'s the perfect way to the that.',
-    //     date: 'Sep 17, 2020',
-    //     image: 'https://1.bp.blogspot.com/-XTVMsZP3HaM/Xxpl394txlI/AAAAAAAABws/zovXWiuNGg4TzBwYYVFfJ1ixDb3JfVokgCNcBGAsYHQ/w400-h195/speedtest.png',
-    //     url: 'https://hackzism.blogspot.com/2020/07/check-internet-speed-from-command-line.html'
-    // },
-    // {
-    //     id: 5,
-    //     title: 'GET MICHAEL\'S OR TREVOR\'S VEHICLES FULLY UPGRADED IN GTA V FOR FREE',
-    //     description: 'In case you haven\'t heard of this game, GTA stands for \'Grand Theft Auto\'. It is an open-world game published by Rockstar Games.',
-    //     date: 'Oct 1, 2020',
-    //     image: 'https://1.bp.blogspot.com/-jhdtUBIRD_s/XxLFKQuRz9I/AAAAAAAABsM/mClfbfDFKvsUwA7Wyi25Lzu3DEmL2lxrACNcBGAsYHQ/s1919/gta.jpg',
-    //     url: 'https://hackzism.blogspot.com/2020/07/how-can-you-get-michaels-or-trevors.html'
-    // },
+  {
+    id: 1,
+    title: "Reflections on Two Years of Growth",
+    description: "The past two years have been an incredible ride of learning, growth and self-reflection. Now that I look back, I don't think I would do anything differently.",
+    date: 'May 02, 2025',
+    image: Post2,
+    url: 'https://www.linkedin.com/posts/malhotra-ankit_the-past-two-years-have-been-an-incredible-activity-7345609623602663425-6yHL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEf-jVsBfXYxeqDyPjePfM__Ty1zVgNaR3U'
+  },
+  {
+    id: 2,
+    title: "When AI Meets Education: My Panel Experience at UCR's Career Summit",
+    description: 'Still buzzing from the fantastic discussions at the 4th Annual All Advisory Board Meeting at the UCR Career Center on Friday, May 16th! A big thank you to Michelle S. Gomez & Alex Muro for the invitation and for coordinating everything so smoothly.',
+    date: 'May 31, 2025',
+    image: Post1,
+    url: 'https://www.linkedin.com/posts/malhotra-ankit_ai-futureofwork-edtech-activity-7334035841410834433-wGnV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEf-jVsBfXYxeqDyPjePfM__Ty1zVgNaR3U'
+  },
+  {
+    id: 3,
+    title: 'STORED POWER TECHNOLOGY INC. ',
+    description: "Happy to share that I've joined STORED POWER TECHNOLOGY INC. as a Business Analyst!I'm passionate about leveraging technology to drive impactful decisions and help businesses grow, and I'm excited to apply those skills to analyzing sales performance, identifying key trends, and developing strategic recommendations at Stored Power Technology Inc. ",
+    date: 'April 04, 2020',
+    image: Post3,
+    url: 'https://www.linkedin.com/posts/malhotra-ankit_businessanalyst-dataanalysis-storedpowertechnology-activity-7305784687501684739-uHDF?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEf-jVsBfXYxeqDyPjePfM__Ty1zVgNaR3U'
+  },
+  // {
+  //     id: 4,
+  //     title: 'CHECK INTERNET SPEED FROM THE COMMAND LINE',
+  //     description: 'Want to check your internet speed from the terminal? Here\'s the perfect way to the that.',
+  //     date: 'Sep 17, 2020',
+  //     image: 'https://1.bp.blogspot.com/-XTVMsZP3HaM/Xxpl394txlI/AAAAAAAABws/zovXWiuNGg4TzBwYYVFfJ1ixDb3JfVokgCNcBGAsYHQ/w400-h195/speedtest.png',
+  //     url: 'https://hackzism.blogspot.com/2020/07/check-internet-speed-from-command-line.html'
+  // },
+  // {
+  //     id: 5,
+  //     title: 'GET MICHAEL\'S OR TREVOR\'S VEHICLES FULLY UPGRADED IN GTA V FOR FREE',
+  //     description: 'In case you haven\'t heard of this game, GTA stands for \'Grand Theft Auto\'. It is an open-world game published by Rockstar Games.',
+  //     date: 'Oct 1, 2020',
+  //     image: 'https://1.bp.blogspot.com/-jhdtUBIRD_s/XxLFKQuRz9I/AAAAAAAABsM/mClfbfDFKvsUwA7Wyi25Lzu3DEmL2lxrACNcBGAsYHQ/s1919/gta.jpg',
+  //     url: 'https://hackzism.blogspot.com/2020/07/how-can-you-get-michaels-or-trevors.html'
+  // },
 ]
 
 
@@ -207,7 +194,7 @@ export const projects = [
     technologies: ["Python", "R", "SQL", "Vertex AI", "Gemma 3", "TensorFlow"],
     category: "AI/ML",
     icon: Brain,
-    image: "https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image:project,
     achievements: [
       "Spearheaded data gathering, cleaning, and transformation pipelines",
       "Fine-tuned large language models using Gemma 3 and Vertex AI",

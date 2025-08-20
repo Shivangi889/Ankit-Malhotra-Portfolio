@@ -1,12 +1,10 @@
 import React, { useRef } from 'react';
 import { ArrowDown } from 'lucide-react';
-// import Footer from '../components/Footer'; 
 const Contact = ({ scrollToFooter }) => {
 
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Contact Page Header */}
       <section className="py-20 px-6 max-w-4xl mx-auto text-center">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black font-serif mb-6">
           Let's Work Together
@@ -19,7 +17,7 @@ const Contact = ({ scrollToFooter }) => {
         {/* Animated arrow button */}
         <button
           onClick={scrollToFooter}
-          className="inline-flex flex-col items-center text-[#000] hover:text-yellow-500 transition-colors animate-bounce"
+          className="inline-flex flex-col items-center text-[#000] hover:text-gray-800 transition-colors animate-bounce"
           aria-label="Scroll to contact form"
         >
           <span className="mb-2 font-bold">Contact me</span>

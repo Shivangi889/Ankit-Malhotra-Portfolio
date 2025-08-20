@@ -119,8 +119,8 @@ const ToolsSection = () => {
           image: [
             "https://upload.wikimedia.org/wikipedia/commons/e/ec/Alteryx_logo.svg", // Alteryx
             "https://www.rensvandeschoot.com/wp-content/uploads/2019/01/spss-1-logo-png-transparent.png", // SPSS
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Informatica_logo.svg/2560px-Informatica_logo.svg.png", // Informatica
-            "https://www.snowflake.com/wp-content/themes/snowflake/assets/img/snowflake-logo-blue.svg" // Snowflake
+            "https://toppng.com/uploads/preview/ithub-logo-transparent-informatica-logo-115629974494d6anhaupe.png", // Informatica
+            "https://www.logo.wine/a/logo/Snowflake_Inc./Snowflake_Inc.-Logo.wine.svg" // Snowflake
           ]
         }
       ]
