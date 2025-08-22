@@ -83,7 +83,7 @@ function Projects() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <div className="bg-black border border-black rounded-lg px-6 py-3">
-                <div className="text-2xl font-bold text-white">30+</div>
+                <div className="text-2xl font-bold text-white">{projects.length}</div>
                 <div className="text-sm text-gray-100">Projects Completed</div>
               </div>
               <div className="bg-black border border-black rounded-lg px-6 py-3">
@@ -91,7 +91,7 @@ function Projects() {
                 <div className="text-sm text-gray-100">Technologies Mastered</div>
               </div>
               <div className="bg-black border border-black rounded-lg px-6 py-3">
-                <div className="text-2xl font-bold text-white">6+</div>
+                <div className="text-2xl font-bold text-white">3+</div>
                 <div className="text-sm text-gray-100">Years Experience</div>
               </div>
             </div>

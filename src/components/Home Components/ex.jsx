@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Calendar, ChevronDown, ChevronUp, Briefcase, GraduationCap, Zap, Database, Code, Shield, Book, Users, Heart, Car, Smartphone, BarChart3 } from 'lucide-react';
+import { MapPin, Calendar, ChevronDown, ChevronUp, Briefcase, GraduationCap, Zap, Database, Code, Shield, BookOpen, Users, Heart, Car, Smartphone, BarChart3, Building, Book } from 'lucide-react';
 
 const Experience = () => {
   const [expandedItems, setExpandedItems] = useState({});
@@ -12,94 +12,93 @@ const Experience = () => {
   };
 
   const experiences = [
-     {
-    id: 'ucr',
-    company: 'University of California, Riverside',
-    type: 'Part-time · 7 mos',
-    location: 'Riverside, California, United States',
-    positions: [
-      {
-        id: 'ai-instructor',
-        title: 'Artificial Intelligence Instructor',
-        duration: 'Aug 2025 - Present · 1 mo',
-        location: 'California, United States · On-site',
-        description: [
-          'Designed and delivered a graduate-level curriculum on advanced AI, covering Natural Language Processing (NLP), Supervised/Unsupervised Learning, and LLM-RAG architectures, achieving a 100% student satisfaction rating.',
-          'Mentored a student team through the end-to-end development of a "Smart Gym Posture-Correction Application," guiding them from concept to a functional prototype using computer vision and machine learning.',
-          'Guided an international student cohort in successfully completing all capstone project objectives, fostering practical AI skills and preparing the next generation of talent for careers in the technology sector.'
-        ],
-        icon: <Code className="w-5 h-5" />,
-        iconBg: 'bg-purple-100',
-        iconColor: 'text-purple-600'
-      },
-      {
-        id: 'grading-assistant',
-        title: 'Grading Assistant',
-        duration: 'Sep 2024 - Dec 2024 · 4 mos',
-        location: 'Remote',
-        description: [
-          'Evaluated assignments, projects, and exams for 50+ students, providing timely feedback on data visualization, statistical analysis, and predictive modeling.',
-          'Assisted in maintaining grading accuracy and fairness, aligning evaluations with course objectives and learning outcomes.',
-          'Supported students by clarifying course material and addressing questions related to business analytics concepts, fostering deeper understanding.'
-        ],
-        icon: <GraduationCap className="w-5 h-5" />,
-        iconBg: 'bg-purple-100',
-        iconColor: 'text-purple-600'
-      },
-      {
-        id: 'peer-mentor',
-        title: 'Peer Mentor',
-        duration: 'Jun 2024 - Dec 2024 · 7 mos',
-        location: 'Hybrid',
-        description: [
-          'Conducted orientation programs for incoming graduate students, facilitating a seamless transition to academic and campus life.',
-          'Delivered tailored workshops on learning strategies, time management, and technical tools to support students from diverse backgrounds.',
-          'Provided personalized mentorship to students, guiding them on academic challenges, career planning, and resource utilization.'
-        ],
-        icon: <Users className="w-5 h-5" />,
-        iconBg: 'bg-purple-100',
-        iconColor: 'text-purple-600'
-      }
-    ]
-  },
-  {
-    id: 'stored-power',
-    company: 'STORED POWER TECHNOLOGY INC',
-    type: 'Full-time · 6 mos',
-    location: 'On-site',
-    positions: [
-      {
-        id: 'manager',
-        title: 'Manager - Business Research & Analytics',
-        duration: 'May 2025 - Present · 4 mos',
-        location: 'California, United States',
-        description: [
-          'Spearheaded the company\'s Hydrogen Project from concept to execution, securing a formal R&D partnership with UCR, crucial Letters of Support from state and local government, and culminating in a $30M investment.',
-          'Architected the AI product roadmap for the in-house Energy Management System (EMS), developing predictive models for equipment maintenance and solar energy storage optimization to maximize grid efficiency.',
-          'Drove the creation of an AI-powered model to predict energy usage across California, identifying optimal grid nodes for curtailed electricity to be used in green hydrogen production.',
-          'Directed a comprehensive competitor analysis initiative that delivered actionable market intelligence, directly contributing to an increased sales win rate and enhancing the company\'s overall market valuation.'
-        ],
-        icon: <Zap className="w-5 h-5" />,
-        iconBg: 'bg-blue-100',
-        iconColor: 'text-blue-600'
-      },
-      {
-        id: 'business-analyst',
-        title: 'Business Analyst',
-        duration: 'Mar 2025 - Jul 2025 · 5 mos',
-        location: 'Riverside, California, United States',
-        description: [
-          'Engineered and deployed an automated sales workflow using CRM APIs, significantly increasing lead processing capacity and drastically reducing first-call response times for prospective clients.',
-          'Developed a machine learning recommendation model that improved lead-to-meeting conversion rates by automatically qualifying high-potential leads and flagging low-quality prospects based on user data.',
-          'Championed the technical integration of IBM WatsonX with the company\'s core platform, enabling real-time energy grid monitoring and enhancing analytical capabilities for enterprise clients.'
-        ],
-        icon: <BarChart3 className="w-5 h-5" />,
-        iconBg: 'bg-blue-100',
-        iconColor: 'text-blue-600'
-      }
-    ]
-  },
- 
+    {
+      id: 'stored-power',
+      company: 'STORED POWER TECHNOLOGY INC',
+      type: 'Full-time · 6 mos',
+      location: 'On-site',
+      positions: [
+        {
+          id: 'manager',
+          title: 'Manager - Business Research & Analytics',
+          duration: 'May 2025 - Present · 4 mos',
+          location: 'California, United States',
+          description: [
+            'Spearheaded the company\'s Hydrogen Project from concept to execution, securing a formal R&D partnership with UCR, crucial Letters of Support from state and local government, and culminating in a $30M investment.',
+            'Architected the AI product roadmap for the in-house Energy Management System (EMS), developing predictive models for equipment maintenance and solar energy storage optimization to maximize grid efficiency.',
+            'Drove the creation of an AI-powered model to predict energy usage across California, identifying optimal grid nodes for curtailed electricity to be used in green hydrogen production.',
+            'Directed a comprehensive competitor analysis initiative that delivered actionable market intelligence, directly contributing to an increased sales win rate and enhancing the company\'s overall market valuation.'
+          ],
+          icon: <Zap className="w-5 h-5" />,
+          iconBg: 'bg-blue-100',
+          iconColor: 'text-blue-600'
+        },
+        {
+          id: 'business-analyst',
+          title: 'Business Analyst',
+          duration: 'Mar 2025 - Jul 2025 · 5 mos',
+          location: 'Riverside, California, United States',
+          description: [
+            'Engineered and deployed an automated sales workflow using CRM APIs, significantly increasing lead processing capacity and drastically reducing first-call response times for prospective clients.',
+            'Developed a machine learning recommendation model that improved lead-to-meeting conversion rates by automatically qualifying high-potential leads and flagging low-quality prospects based on user data.',
+            'Championed the technical integration of IBM WatsonX with the company\'s core platform, enabling real-time energy grid monitoring and enhancing analytical capabilities for enterprise clients.'
+          ],
+          icon: <BarChart3 className="w-5 h-5" />,
+          iconBg: 'bg-blue-100',
+          iconColor: 'text-blue-600'
+        }
+      ]
+    },
+    {
+      id: 'ucr',
+      company: 'University of California, Riverside',
+      type: 'Part-time · 7 mos',
+      location: 'Riverside, California, United States',
+      positions: [
+        {
+          id: 'ai-instructor',
+          title: 'Artificial Intelligence Instructor',
+          duration: 'Aug 2025 - Present · 1 mo',
+          location: 'California, United States · On-site',
+          description: [
+            'Designed and delivered a graduate-level curriculum on advanced AI, covering Natural Language Processing (NLP), Supervised/Unsupervised Learning, and LLM-RAG architectures, achieving a 100% student satisfaction rating.',
+            'Mentored a student team through the end-to-end development of a "Smart Gym Posture-Correction Application," guiding them from concept to a functional prototype using computer vision and machine learning.',
+            'Guided an international student cohort in successfully completing all capstone project objectives, fostering practical AI skills and preparing the next generation of talent for careers in the technology sector.'
+          ],
+          icon: <Code className="w-5 h-5" />,
+          iconBg: 'bg-purple-100',
+          iconColor: 'text-purple-600'
+        },
+        {
+          id: 'grading-assistant',
+          title: 'Grading Assistant',
+          duration: 'Sep 2024 - Dec 2024 · 4 mos',
+          location: 'Remote',
+          description: [
+            'Evaluated assignments, projects, and exams for 50+ students, providing timely feedback on data visualization, statistical analysis, and predictive modeling.',
+            'Assisted in maintaining grading accuracy and fairness, aligning evaluations with course objectives and learning outcomes.',
+            'Supported students by clarifying course material and addressing questions related to business analytics concepts, fostering deeper understanding.'
+          ],
+          icon: <GraduationCap className="w-5 h-5" />,
+          iconBg: 'bg-purple-100',
+          iconColor: 'text-purple-600'
+        },
+        {
+          id: 'peer-mentor',
+          title: 'Peer Mentor',
+          duration: 'Jun 2024 - Dec 2024 · 7 mos',
+          location: 'Hybrid',
+          description: [
+            'Conducted orientation programs for incoming graduate students, facilitating a seamless transition to academic and campus life.',
+            'Delivered tailored workshops on learning strategies, time management, and technical tools to support students from diverse backgrounds.',
+            'Provided personalized mentorship to students, guiding them on academic challenges, career planning, and resource utilization.'
+          ],
+          icon: <Users className="w-5 h-5" />,
+          iconBg: 'bg-purple-100',
+          iconColor: 'text-purple-600'
+        }
+      ]
+    },
     {
       id: 'inpower',
       company: 'We Are InPower',
@@ -257,96 +256,58 @@ const Experience = () => {
     }
   ];
 
-  const internships = [
-    {
-      id: 'internships',
-      company: 'Internship Experience',
-      type: 'Various durations',
-      location: 'Multiple locations',
-      positions: [
-        {
-          id: 'isync',
-          title: 'Data Science Intern',
-          duration: 'Apr 2024 - May 2024 · 2 mos',
-          location: 'California, United States · Remote',
-          description: [
-            'Integrated SAP ERP S4Hana with Python, developing methodologies for AI-generated reports using Gemini-Pro LLM and Hugging-Face API',
-            'Analyzed critical financial and controlling modules to automate reporting and data inflow, enhancing financial transactions and internal cost management'
-          ],
-          skills: ['API', 'Data Analysis', 'SDLC', 'Root Cause Problem Solving'],
-          icon: <Database className="w-5 h-5" />,
-          iconBg: 'bg-orange-100',
-          iconColor: 'text-orange-600'
-        },
-        {
-          id: 'inpower',
-          title: 'Data Science Intern (Generative AI)',
-          duration: 'Apr 2024 - Jun 2024 · 3 mos',
-          location: 'California, United States · Remote',
-          description: [
-            'Spearheaded the creation of an innovative AI chatbot to support non-binary individuals using advanced Large Language Model (LLM) fine-tuning',
-            'Managed end-to-end project development, including design, implementation, and continuous improvement',
-            'Focused on inclusive and empathetic communication to ensure effective and sensitive interactions'
-          ],
-          skills: ['API', 'Python', 'Data Analysis', 'Large Language Models', 'Data Mining', 'SDLC', 'Requirements Gathering', 'Product Development'],
-          icon: <Code className="w-5 h-5" />,
-          iconBg: 'bg-pink-100',
-          iconColor: 'text-pink-600'
-        },
-        {
-          id: 'birla',
-          title: 'Support Executive',
-          duration: 'Mar 2019 - May 2019 · 3 mos',
-          location: 'Hyderabad, Telangana, India',
-          description: [
-            'Supported the back-end operations team by designing and writing scripts to fasten the process of insurance application processing',
-            'Collaborated on the strategic development of Application timing, processing and optimization'
-          ],
-          icon: <Shield className="w-5 h-5" />,
-          iconBg: 'bg-teal-100',
-          iconColor: 'text-teal-600'
-        }
-      ]
-    }
-  ];
-
   const volunteering = [
     {
-      id: 'volunteering',
-      company: 'Volunteer Experience',
-      type: 'Various durations',
-      location: 'Multiple locations',
+      id: 'iste',
+      company: 'Indian Society for Technical Education',
+      type: 'Volunteer · 10 mos',
+      location: 'VIT University',
       positions: [
         {
-          id: 'iste',
+          id: 'core-member-iste',
           title: 'Core Committee Member',
           duration: 'Nov 2015 - Aug 2016 · 10 mos',
           location: 'VIT University',
           description: [
-            'Work involved strategy development for technical college events',
-            'Included extensive managerial work for university club/chapter',
-            'Organized and coordinated technical events and workshops'
+            'Work here involved strategy development for technical college events.',
+            'Also included a lot of managerial work.',
+            'It was University club/chapter.'
           ],
           icon: <Users className="w-5 h-5" />,
           iconBg: 'bg-indigo-100',
           iconColor: 'text-indigo-600'
-        },
+        }
+      ]
+    },
+    {
+      id: 'sae',
+      company: 'Society of Automotive Engineers (VIT, Vellore)',
+      type: 'Volunteer · 9 mos',
+      location: 'VIT Vellore',
+      positions: [
         {
-          id: 'sae',
+          id: 'core-member-sae',
           title: 'Core Committee Member',
           duration: 'Sep 2015 - May 2016 · 9 mos',
           location: 'VIT Vellore',
           description: [
-            'Technical work related to the automotive industry',
-            'Involved designing college technical events and managing those events',
-            'Contributed to automotive engineering projects and competitions'
+            'Technical work related to the automotive industry.',
+            'Involved designing college technical events and managing those events.'
           ],
           icon: <Car className="w-5 h-5" />,
           iconBg: 'bg-red-100',
           iconColor: 'text-red-600'
-        },
+        }
+      ]
+    },
+    {
+      id: 'connectedreams',
+      company: 'Connectedreams.com',
+      type: 'Freelance · 6 mos',
+      location: 'New York, New York',
+      positions: [
         {
-          id: 'connectedreams',
+          id: 'research-analyst',
           title: 'Research Analyst and Content Developer',
           duration: 'Sep 2016 - Feb 2017 · 6 mos',
           location: 'New York, New York',
@@ -363,7 +324,7 @@ const Experience = () => {
     }
   ];
 
-  const allSections = [...experiences, ...internships, ...volunteering];
+  const allSections = [...experiences, ...volunteering];
 
   const ExperienceSection = ({ company }) => (
     <div key={company.id} className="bg-white rounded-xl shadow-sm overflow-hidden mb-6">
@@ -472,8 +433,8 @@ const Experience = () => {
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Experience</h1>
-          <p className="text-gray-600">A comprehensive timeline of my professional journey</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Professional Experience</h1>
+          <p className="text-gray-600">A comprehensive timeline of my career journey across various roles and organizations</p>
         </div>
 
         <div className="space-y-6">
