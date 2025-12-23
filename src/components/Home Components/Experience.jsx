@@ -12,13 +12,19 @@ const Experience = () => {
   };
 
   const experiences = [
+<<<<<<< HEAD
     {
+=======
+
+       {
+>>>>>>> cf4a79384b275f4782f132b1d14f55fe58bad763
   "id": "glid",
   "company": "Glīd",
   "type": "Full-time · 3 mos",
   "location": "Riverside, California, United States · On-site",
   "positions": [
     {
+<<<<<<< HEAD
          "id": "Head of Operations",
        "title": "Head of Operations",
       "duration": "Nov 2025 - Present · 2 mos",
@@ -35,6 +41,8 @@ const Experience = () => {
 
     },
     {
+=======
+>>>>>>> cf4a79384b275f4782f132b1d14f55fe58bad763
       "id": "strategic-programs-lead",
       "title": "Strategic Programs Lead",
       "duration": "Sep 2025 to Present · 3 mos",
@@ -53,11 +61,18 @@ const Experience = () => {
   ]
 }
     ,
+<<<<<<< HEAD
 
      {
     id: 'ucr',
     company: 'University of California, Riverside',
     type: 'Part-time · 4 mos',
+=======
+     {
+    id: 'ucr',
+    company: 'University of California, Riverside',
+    type: 'Part-time · 7 mos',
+>>>>>>> cf4a79384b275f4782f132b1d14f55fe58bad763
     location: 'Riverside, California, United States',
     positions: [
       {
@@ -528,4 +543,8 @@ const Experience = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Experience;
+=======
+export default Experience;
+>>>>>>> cf4a79384b275f4782f132b1d14f55fe58bad763
