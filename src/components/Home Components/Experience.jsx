@@ -528,8 +528,4 @@ const Experience = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Experience;
-=======
-export default Experience;
->>>>>>> cf4a79384b275f4782f132b1d14f55fe58bad763
