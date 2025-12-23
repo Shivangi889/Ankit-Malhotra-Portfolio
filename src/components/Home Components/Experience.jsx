@@ -12,151 +12,136 @@ const Experience = () => {
   };
 
   const experiences = [
-<<<<<<< HEAD
-    {
-=======
 
-       {
->>>>>>> cf4a79384b275f4782f132b1d14f55fe58bad763
-  "id": "glid",
-  "company": "Glīd",
-  "type": "Full-time · 3 mos",
-  "location": "Riverside, California, United States · On-site",
-  "positions": [
     {
-<<<<<<< HEAD
-         "id": "Head of Operations",
-       "title": "Head of Operations",
-      "duration": "Nov 2025 - Present · 2 mos",
-  
-      "location": "Riverside, California, United States",
-      "description": [
-        "Leading cross-functional teams to drive operational excellence and strategic initiatives.",
-        "Developing and implementing scalable processes to enhance efficiency and reduce costs.",
-        "Collaborating with stakeholders to align operations with organizational goals."
-      ],
-      "icon": <Code className="w-5 h-5" />,
-      "iconBg": "bg-green-100",
-      "iconColor": "text-green-600"
+      "id": "glid",
+      "company": "Glīd",
+      "type": "Full-time · 3 mos",
+      "location": "Riverside, California, United States · On-site",
+      "positions": [
+        {
+          "id": "Head of Operations",
+          "title": "Head of Operations",
+          "duration": "Nov 2025 - Present · 2 mos",
 
+          "location": "Riverside, California, United States",
+          "description": [
+            "Leading cross-functional teams to drive operational excellence and strategic initiatives.",
+            "Developing and implementing scalable processes to enhance efficiency and reduce costs.",
+            "Collaborating with stakeholders to align operations with organizational goals."
+          ],
+          "icon": <Code className="w-5 h-5" />,
+          "iconBg": "bg-green-100",
+          "iconColor": "text-green-600"
+
+        },
+        {
+          "id": "strategic-programs-lead",
+          "title": "Strategic Programs Lead",
+          "duration": "Sep 2025 to Present · 3 mos",
+          "location": "Riverside, California, United States",
+          "description": [
+            "Architecting and supervising EZRA-1SIX, Glīd’s proprietary AI orchestration platform, which synchronizes road-to-rail logistics, autonomous mobility, and real-time intelligence for first-mile freight operations.",
+            "Leading grant strategy and innovation challenges, securing funding and strategic partnerships to accelerate dual-mode logistics deployment across commercial and defense corridors.",
+            "Translating field data into predictive decision frameworks, integrating analytics into operational, policy, and funding initiatives.",
+            "Serving as a public representative and speaker at innovation summits, articulating Glīd’s vision for AI-driven infrastructure and sustainable mobility.",
+            "Championing a culture of cross-functional velocity — connecting engineers, policymakers, and investors to execute with precision and impact."
+          ],
+          "icon": <Users className="w-5 h-5" />,
+          "iconBg": "bg-blue-100",
+          "iconColor": "text-blue-600"
+        }
+      ]
+    }
+    ,
+        {
+      id: 'ucr',
+      company: 'University of California, Riverside',
+      type: 'Part-time · 4 mos',
+      location: 'Riverside, California, United States',
+      positions: [
+        {
+          id: 'ai-instructor',
+          title: 'Artificial Intelligence Instructor',
+          duration: 'Aug 2025 - Present · 1 mo',
+          location: 'California, United States · On-site',
+          description: [
+            'Designed and delivered a graduate-level curriculum on advanced AI, covering Natural Language Processing (NLP), Supervised/Unsupervised Learning, and LLM-RAG architectures, achieving a 100% student satisfaction rating.',
+            'Mentored a student team through the end-to-end development of a "Smart Gym Posture-Correction Application," guiding them from concept to a functional prototype using computer vision and machine learning.',
+            'Guided an international student cohort in successfully completing all capstone project objectives, fostering practical AI skills and preparing the next generation of talent for careers in the technology sector.'
+          ],
+          icon: <Code className="w-5 h-5" />,
+          iconBg: 'bg-purple-100',
+          iconColor: 'text-purple-600'
+        },
+        {
+          id: 'grading-assistant',
+          title: 'Grading Assistant',
+          duration: 'Sep 2024 - Dec 2024 · 4 mos',
+          location: 'Remote',
+          description: [
+            'Evaluated assignments, projects, and exams for 50+ students, providing timely feedback on data visualization, statistical analysis, and predictive modeling.',
+            'Assisted in maintaining grading accuracy and fairness, aligning evaluations with course objectives and learning outcomes.',
+            'Supported students by clarifying course material and addressing questions related to business analytics concepts, fostering deeper understanding.'
+          ],
+          icon: <GraduationCap className="w-5 h-5" />,
+          iconBg: 'bg-purple-100',
+          iconColor: 'text-purple-600'
+        },
+        {
+          id: 'peer-mentor',
+          title: 'Peer Mentor',
+          duration: 'Jun 2024 - Dec 2024 · 7 mos',
+          location: 'Hybrid',
+          description: [
+            'Conducted orientation programs for incoming graduate students, facilitating a seamless transition to academic and campus life.',
+            'Delivered tailored workshops on learning strategies, time management, and technical tools to support students from diverse backgrounds.',
+            'Provided personalized mentorship to students, guiding them on academic challenges, career planning, and resource utilization.'
+          ],
+          icon: <Users className="w-5 h-5" />,
+          iconBg: 'bg-purple-100',
+          iconColor: 'text-purple-600'
+        }
+      ]
     },
     {
-=======
->>>>>>> cf4a79384b275f4782f132b1d14f55fe58bad763
-      "id": "strategic-programs-lead",
-      "title": "Strategic Programs Lead",
-      "duration": "Sep 2025 to Present · 3 mos",
-      "location": "Riverside, California, United States",
-      "description": [
-        "Architecting and supervising EZRA-1SIX, Glīd’s proprietary AI orchestration platform, which synchronizes road-to-rail logistics, autonomous mobility, and real-time intelligence for first-mile freight operations.",
-        "Leading grant strategy and innovation challenges, securing funding and strategic partnerships to accelerate dual-mode logistics deployment across commercial and defense corridors.",
-        "Translating field data into predictive decision frameworks, integrating analytics into operational, policy, and funding initiatives.",
-        "Serving as a public representative and speaker at innovation summits, articulating Glīd’s vision for AI-driven infrastructure and sustainable mobility.",
-        "Championing a culture of cross-functional velocity — connecting engineers, policymakers, and investors to execute with precision and impact."
-      ],
-      "icon": <Users className="w-5 h-5" />,
-      "iconBg": "bg-blue-100",
-      "iconColor": "text-blue-600"
-    }
-  ]
-}
-    ,
-<<<<<<< HEAD
+      id: 'stored-power',
+      company: 'STORED POWER TECHNOLOGY INC',
+      type: 'Full-time · 6 mos',
+      location: 'On-site',
+      positions: [
+        {
+          id: 'manager',
+          title: 'Manager - Business Research & Analytics',
+          duration: 'May 2025 - Present · 4 mos',
+          location: 'California, United States',
+          description: [
+            'Spearheaded the company\'s Hydrogen Project from concept to execution, securing a formal R&D partnership with UCR, crucial Letters of Support from state and local government, and culminating in a $30M investment.',
+            'Architected the AI product roadmap for the in-house Energy Management System (EMS), developing predictive models for equipment maintenance and solar energy storage optimization to maximize grid efficiency.',
+            'Drove the creation of an AI-powered model to predict energy usage across California, identifying optimal grid nodes for curtailed electricity to be used in green hydrogen production.',
+            'Directed a comprehensive competitor analysis initiative that delivered actionable market intelligence, directly contributing to an increased sales win rate and enhancing the company\'s overall market valuation.'
+          ],
+          icon: <Zap className="w-5 h-5" />,
+          iconBg: 'bg-blue-100',
+          iconColor: 'text-blue-600'
+        },
+        {
+          id: 'business-analyst',
+          title: 'Business Analyst',
+          duration: 'Mar 2025 - Jul 2025 · 5 mos',
+          location: 'Riverside, California, United States',
+          description: [
+            'Engineered and deployed an automated sales workflow using CRM APIs, significantly increasing lead processing capacity and drastically reducing first-call response times for prospective clients.',
+            'Developed a machine learning recommendation model that improved lead-to-meeting conversion rates by automatically qualifying high-potential leads and flagging low-quality prospects based on user data.',
+            'Championed the technical integration of IBM WatsonX with the company\'s core platform, enabling real-time energy grid monitoring and enhancing analytical capabilities for enterprise clients.'
+          ],
+          icon: <BarChart3 className="w-5 h-5" />,
+          iconBg: 'bg-blue-100',
+          iconColor: 'text-blue-600'
+        }
+      ]
+    },
 
-     {
-    id: 'ucr',
-    company: 'University of California, Riverside',
-    type: 'Part-time · 4 mos',
-=======
-     {
-    id: 'ucr',
-    company: 'University of California, Riverside',
-    type: 'Part-time · 7 mos',
->>>>>>> cf4a79384b275f4782f132b1d14f55fe58bad763
-    location: 'Riverside, California, United States',
-    positions: [
-      {
-        id: 'ai-instructor',
-        title: 'Artificial Intelligence Instructor',
-        duration: 'Aug 2025 - Present · 1 mo',
-        location: 'California, United States · On-site',
-        description: [
-          'Designed and delivered a graduate-level curriculum on advanced AI, covering Natural Language Processing (NLP), Supervised/Unsupervised Learning, and LLM-RAG architectures, achieving a 100% student satisfaction rating.',
-          'Mentored a student team through the end-to-end development of a "Smart Gym Posture-Correction Application," guiding them from concept to a functional prototype using computer vision and machine learning.',
-          'Guided an international student cohort in successfully completing all capstone project objectives, fostering practical AI skills and preparing the next generation of talent for careers in the technology sector.'
-        ],
-        icon: <Code className="w-5 h-5" />,
-        iconBg: 'bg-purple-100',
-        iconColor: 'text-purple-600'
-      },
-      {
-        id: 'grading-assistant',
-        title: 'Grading Assistant',
-        duration: 'Sep 2024 - Dec 2024 · 4 mos',
-        location: 'Remote',
-        description: [
-          'Evaluated assignments, projects, and exams for 50+ students, providing timely feedback on data visualization, statistical analysis, and predictive modeling.',
-          'Assisted in maintaining grading accuracy and fairness, aligning evaluations with course objectives and learning outcomes.',
-          'Supported students by clarifying course material and addressing questions related to business analytics concepts, fostering deeper understanding.'
-        ],
-        icon: <GraduationCap className="w-5 h-5" />,
-        iconBg: 'bg-purple-100',
-        iconColor: 'text-purple-600'
-      },
-      {
-        id: 'peer-mentor',
-        title: 'Peer Mentor',
-        duration: 'Jun 2024 - Dec 2024 · 7 mos',
-        location: 'Hybrid',
-        description: [
-          'Conducted orientation programs for incoming graduate students, facilitating a seamless transition to academic and campus life.',
-          'Delivered tailored workshops on learning strategies, time management, and technical tools to support students from diverse backgrounds.',
-          'Provided personalized mentorship to students, guiding them on academic challenges, career planning, and resource utilization.'
-        ],
-        icon: <Users className="w-5 h-5" />,
-        iconBg: 'bg-purple-100',
-        iconColor: 'text-purple-600'
-      }
-    ]
-  },
-  {
-    id: 'stored-power',
-    company: 'STORED POWER TECHNOLOGY INC',
-    type: 'Full-time · 6 mos',
-    location: 'On-site',
-    positions: [
-      {
-        id: 'manager',
-        title: 'Manager - Business Research & Analytics',
-        duration: 'May 2025 - Present · 4 mos',
-        location: 'California, United States',
-        description: [
-          'Spearheaded the company\'s Hydrogen Project from concept to execution, securing a formal R&D partnership with UCR, crucial Letters of Support from state and local government, and culminating in a $30M investment.',
-          'Architected the AI product roadmap for the in-house Energy Management System (EMS), developing predictive models for equipment maintenance and solar energy storage optimization to maximize grid efficiency.',
-          'Drove the creation of an AI-powered model to predict energy usage across California, identifying optimal grid nodes for curtailed electricity to be used in green hydrogen production.',
-          'Directed a comprehensive competitor analysis initiative that delivered actionable market intelligence, directly contributing to an increased sales win rate and enhancing the company\'s overall market valuation.'
-        ],
-        icon: <Zap className="w-5 h-5" />,
-        iconBg: 'bg-blue-100',
-        iconColor: 'text-blue-600'
-      },
-      {
-        id: 'business-analyst',
-        title: 'Business Analyst',
-        duration: 'Mar 2025 - Jul 2025 · 5 mos',
-        location: 'Riverside, California, United States',
-        description: [
-          'Engineered and deployed an automated sales workflow using CRM APIs, significantly increasing lead processing capacity and drastically reducing first-call response times for prospective clients.',
-          'Developed a machine learning recommendation model that improved lead-to-meeting conversion rates by automatically qualifying high-potential leads and flagging low-quality prospects based on user data.',
-          'Championed the technical integration of IBM WatsonX with the company\'s core platform, enabling real-time energy grid monitoring and enhancing analytical capabilities for enterprise clients.'
-        ],
-        icon: <BarChart3 className="w-5 h-5" />,
-        iconBg: 'bg-blue-100',
-        iconColor: 'text-blue-600'
-      }
-    ]
-  },
- 
     {
       id: 'inpower',
       company: 'We Are InPower',
@@ -444,7 +429,7 @@ const Experience = () => {
         {company.positions.map((position, positionIndex) => {
           const isExpanded = expandedItems[position.id];
           const showSeeMore = position.description.length > 2 || (position.skills && position.skills.length > 0);
-          
+
           return (
             <div key={position.id} className="p-6">
               <div className="flex">
@@ -461,7 +446,7 @@ const Experience = () => {
                 {/* Position content */}
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-gray-900">{position.title}</h3>
-                  
+
                   <div className="flex flex-wrap items-center mt-2 text-gray-600 mb-4">
                     <span className="flex items-center mr-4">
                       <Calendar className="w-4 h-4 mr-1" />
@@ -499,7 +484,7 @@ const Experience = () => {
 
                   {/* See more/less button */}
                   {showSeeMore && (
-                    <button 
+                    <button
                       onClick={() => toggleExpand(position.id)}
                       className="flex items-center text-blue-600 hover:text-blue-800 font-medium"
                     >
