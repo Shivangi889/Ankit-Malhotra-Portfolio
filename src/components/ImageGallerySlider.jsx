@@ -31,12 +31,16 @@ import img21 from "../assets/images/IMG_8727.webp";
 import img22 from "../assets/images/IMG_8834.webp";
 import img23 from "../assets/images/industry.JPEG";
 import img24 from "../assets/images/lxvczgxig1qc00umut7t.webp";
-
+import img25 from "../assets/images/Win1.jpeg";
+import img26  from "../assets/images/1.jpeg";
+import img27 from "../assets/images/43.jpeg";
+import img28 from "../assets/images/23.jpeg";
+import img29 from "../assets/images/student.jpeg";
 
 const images = [
   img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
   img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
-  img21, img22, img23, img24,
+  img21, img22, img23, img24,img25,img26,img27,img28,img29
 ];
 
 const ImageCarousel = () => {

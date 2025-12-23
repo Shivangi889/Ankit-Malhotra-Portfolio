@@ -12,10 +12,52 @@ const Experience = () => {
   };
 
   const experiences = [
+    {
+  "id": "glid",
+  "company": "Glīd",
+  "type": "Full-time · 3 mos",
+  "location": "Riverside, California, United States · On-site",
+  "positions": [
+    {
+         "id": "Head of Operations",
+       "title": "Head of Operations",
+      "duration": "Nov 2025 - Present · 2 mos",
+  
+      "location": "Riverside, California, United States",
+      "description": [
+        "Leading cross-functional teams to drive operational excellence and strategic initiatives.",
+        "Developing and implementing scalable processes to enhance efficiency and reduce costs.",
+        "Collaborating with stakeholders to align operations with organizational goals."
+      ],
+      "icon": <Code className="w-5 h-5" />,
+      "iconBg": "bg-green-100",
+      "iconColor": "text-green-600"
+
+    },
+    {
+      "id": "strategic-programs-lead",
+      "title": "Strategic Programs Lead",
+      "duration": "Sep 2025 to Present · 3 mos",
+      "location": "Riverside, California, United States",
+      "description": [
+        "Architecting and supervising EZRA-1SIX, Glīd’s proprietary AI orchestration platform, which synchronizes road-to-rail logistics, autonomous mobility, and real-time intelligence for first-mile freight operations.",
+        "Leading grant strategy and innovation challenges, securing funding and strategic partnerships to accelerate dual-mode logistics deployment across commercial and defense corridors.",
+        "Translating field data into predictive decision frameworks, integrating analytics into operational, policy, and funding initiatives.",
+        "Serving as a public representative and speaker at innovation summits, articulating Glīd’s vision for AI-driven infrastructure and sustainable mobility.",
+        "Championing a culture of cross-functional velocity — connecting engineers, policymakers, and investors to execute with precision and impact."
+      ],
+      "icon": <Users className="w-5 h-5" />,
+      "iconBg": "bg-blue-100",
+      "iconColor": "text-blue-600"
+    }
+  ]
+}
+    ,
+
      {
     id: 'ucr',
     company: 'University of California, Riverside',
-    type: 'Part-time · 7 mos',
+    type: 'Part-time · 4 mos',
     location: 'Riverside, California, United States',
     positions: [
       {

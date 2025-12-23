@@ -4,6 +4,8 @@ import profile from '../assets/images/profile.jpeg'
 import Post1 from "../assets/images/Ankit's post Linkedin.jpeg";
 import Post2 from "../assets/images/UCR.JPG";
 import Post3 from "../assets/images/STORED POWER TECHNOLOGY INC..jpeg"
+import Glid1 from "../assets/images/glid1.jpeg";
+import Win from "../assets/images/win.jpeg"
 import project from "../assets/images/download.jpeg"
 
 import {
@@ -139,8 +141,25 @@ export const testimonialsData = [
 
 
 export const blogData = [
+ {
+  id: 1,
+  title: "Representing Glīd at the Idea to Product HardTech Accelerator",
+  description: "Last month in Detroit, Glīd was represented at the Idea to Product HardTech Accelerator hosted by Centrepolis Accelerator at Lawrence Technological University and Newlab. The pitch showcased how GlīderM, Rāden, and EZRA-1SIX function as a unified road-to-rail system, addressing the fragmented first-mile challenge through dual-mode platforms and AI-driven orchestration.",
+  date: 'June 2025',
+  image: Glid1,
+  url: 'https://www.linkedin.com/feed/update/urn:li:activity:7405310626769608704/'
+},
+{
+  id: 3,
+  title: "Winning TechCrunch Disrupt 2025: Faith, Purpose, and the Power of Glīd",
+  description: "Winning TechCrunch Disrupt 2025 marked a defining moment of faith, perseverance, and purpose. From honoring service as a veteran to celebrating the Glīd team and uplifting Black and Brown builders, this win represents more than a trophy—it’s a commitment to transforming logistics, revitalizing communities, and synchronizing road and rail to create lasting impact.",
+  date: '2025',
+  image: Win,
+  url: 'https://lnkd.in/eh3cn4FK'
+}
+,
   {
-    id: 1,
+    id: 2,
     title: "Reflections on Two Years of Growth",
     description: "The past two years have been an incredible ride of learning, growth and self-reflection. Now that I look back, I don't think I would do anything differently.",
     date: 'May 02, 2025',
@@ -148,7 +167,7 @@ export const blogData = [
     url: 'https://www.linkedin.com/posts/malhotra-ankit_the-past-two-years-have-been-an-incredible-activity-7345609623602663425-6yHL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEf-jVsBfXYxeqDyPjePfM__Ty1zVgNaR3U'
   },
   {
-    id: 2,
+    id: 3,
     title: "When AI Meets Education: My Panel Experience at UCR's Career Summit",
     description: 'Still buzzing from the fantastic discussions at the 4th Annual All Advisory Board Meeting at the UCR Career Center on Friday, May 16th! A big thank you to Michelle S. Gomez & Alex Muro for the invitation and for coordinating everything so smoothly.',
     date: 'May 31, 2025',
@@ -156,7 +175,7 @@ export const blogData = [
     url: 'https://www.linkedin.com/posts/malhotra-ankit_ai-futureofwork-edtech-activity-7334035841410834433-wGnV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEf-jVsBfXYxeqDyPjePfM__Ty1zVgNaR3U'
   },
   {
-    id: 3,
+    id: 4,
     title: 'STORED POWER TECHNOLOGY INC. ',
     description: "Happy to share that I've joined STORED POWER TECHNOLOGY INC. as a Business Analyst!I'm passionate about leveraging technology to drive impactful decisions and help businesses grow, and I'm excited to apply those skills to analyzing sales performance, identifying key trends, and developing strategic recommendations at Stored Power Technology Inc. ",
     date: 'April 04, 2020',
