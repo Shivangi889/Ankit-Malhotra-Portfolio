@@ -20,22 +20,26 @@ const Footer = () => {
         const templateParams = {
             from_name: formData.name,
             from_email: formData.email,
-            message: formData.message
+            message: formData.message,
+            subject: 'Contact Form Submission from Portfolio',
+            to_email: 'amalh017@ucr.edu'
         };
 
         try {
+            // Initialize EmailJS with your public key
+            emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY');
+
             await emailjs.send(
-                'your_service_id',
-                'your_template_id',
-                templateParams,
-                'your_public_key'
+                import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID',
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID',
+                templateParams
             );
 
             setFormData({ name: '', email: '', message: '' });
             setShowModal(true);
         } catch (error) {
             console.error('Email send error:', error);
-            alert("Something went wrong! Please try again.");
+            alert("Something went wrong! Please try again or contact me directly at amalh017@ucr.edu");
         } finally {
             setIsSubmitting(false);
         }
@@ -145,6 +149,13 @@ const Footer = () => {
                             >
                                 <span className="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition"></span>
                                  My Experience
+                            </Link>
+                            <Link
+                                to="/mentorship"
+                                className="hover:text-white text-white transition-colors duration-200 flex items-center gap-2 group"
+                            >
+                                <span className="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition"></span>
+                                My Mentorship
                             </Link>
                             <Link
                                 to="/contact"

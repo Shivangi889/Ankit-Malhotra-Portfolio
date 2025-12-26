@@ -2,21 +2,52 @@ import React from 'react';
 import { X } from 'lucide-react';
 
 export const InfoModal = ({ title, content, image, onClose }) => {
-    // Format content to handle line breaks and bullet points
+    // Format content to handle line breaks, bullet points, and headings
     const formatContent = (text) => {
-        return text.split('\n').map((line, index) => {
-            if (line.trim().startsWith('-')) {
+        const lines = text.split('\n');
+        return lines.map((line, index) => {
+            const trimmedLine = line.trim();
+            
+            if (!trimmedLine) return null;
+            
+            // Bullet points
+            if (trimmedLine.startsWith('-')) {
                 return (
                     <li key={index} className="ml-4 mb-2 text-slate-100">
-                        {line.trim().substring(1).trim()}
+                        {trimmedLine.substring(1).trim()}
                     </li>
                 );
             }
-            return line.trim() ? (
+            
+            // Detect headings: lines that don't end with punctuation and are followed by content
+            // Also check if it looks like a role title (contains "at" or common role keywords)
+            const nextLine = lines[index + 1]?.trim();
+            const looksLikeRoleTitle = trimmedLine.includes(' at ') || 
+                                      trimmedLine.includes('Manager') || 
+                                      trimmedLine.includes('Lead') || 
+                                      trimmedLine.includes('Instructor') ||
+                                      trimmedLine.includes('Projects');
+            
+            const isHeading = !trimmedLine.endsWith('.') && 
+                             !trimmedLine.endsWith(',') &&
+                             index < lines.length - 1 && 
+                             nextLine &&
+                             (looksLikeRoleTitle || trimmedLine.length < 60);
+            
+            if (isHeading) {
+                return (
+                    <h3 key={index} className="text-xl font-bold text-white mt-6 mb-3 first:mt-0">
+                        {trimmedLine}
+                    </h3>
+                );
+            }
+            
+            // Regular paragraphs
+            return (
                 <p key={index} className="mb-4 text-slate-200 leading-relaxed">
-                    {line.trim()}
+                    {trimmedLine}
                 </p>
-            ) : null;
+            );
         });
     };
 

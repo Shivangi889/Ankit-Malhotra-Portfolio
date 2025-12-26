@@ -8,6 +8,7 @@ import Hero from './pages/Home';
 import Projects from './pages/Projects';
 import Hobbies from './pages/Hobbies';
 import Contact from './pages/Contact';
+import Mentorship from './pages/Mentorship';
 import ProjectDetails from './pages/Projects/ProjectDetails';
 import ImageGallerySlider from './components/ImageGallerySlider';
 import ImageCarousel from './components/ImageGallerySlider';
@@ -45,6 +46,7 @@ export default function App() {
           <Route path="/resume" element={<Resume />} />
           <Route path="/project" element={<Projects />} />
           <Route path="/experience" element={<Experience/>}/>
+          <Route path="/mentorship" element={<Mentorship />} />
           <Route path="/project/:id" element={<ProjectDetails />} />
           <Route path="/contact" element={
             <Contact scrollToFooter={handleScrollToFooter} />

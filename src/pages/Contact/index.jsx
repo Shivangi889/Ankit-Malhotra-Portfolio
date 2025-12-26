@@ -1,28 +1,217 @@
-import React, { useRef } from 'react';
-import { ArrowDown } from 'lucide-react';
-const Contact = ({ scrollToFooter }) => {
+import React, { useState } from 'react';
+import { Mail, Send, CheckCircle, AlertCircle, User, MessageSquare } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
+const Contact = ({ scrollToFooter }) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', or null
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject || 'Contact Form Submission',
+      message: formData.message,
+      to_email: 'amalh017@ucr.edu' // Your email address
+    };
+
+    try {
+      // Initialize EmailJS with your public key
+      emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY');
+
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID',
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID',
+        templateParams
+      );
+
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setSubmitStatus('success');
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+    } catch (error) {
+      console.error('Email send error:', error);
+      setSubmitStatus('error');
+      
+      // Reset error message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="py-20 px-6 max-w-4xl mx-auto text-center">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black font-serif mb-6">
-          Let's Work Together
-        </h1>
-        <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">
-          Have a project in mind or want to discuss potential opportunities? 
-          I'd love to hear from you. Drop me a message and I'll get back to you soon.
-        </p>
-        
-        {/* Animated arrow button */}
-        <button
-          onClick={scrollToFooter}
-          className="inline-flex flex-col items-center text-[#000] hover:text-gray-800 transition-colors animate-bounce"
-          aria-label="Scroll to contact form"
-        >
-          <span className="mb-2 font-bold">Contact me</span>
-          <ArrowDown className="w-8 h-8" />
-        </button>
+      {/* Hero Section */}
+      <section className="py-20 px-6 max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6">
+            Let's Work Together
+          </h1>
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            Have a project in mind or want to discuss potential opportunities? 
+            I'd love to hear from you. Drop me a message and I'll get back to you soon.
+          </p>
+        </div>
+
+        {/* Contact Form */}
+        <div className="max-w-2xl mx-auto">
+          <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 md:p-12">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Name Field */}
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <User className="w-4 h-4 inline mr-2" />
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="John Doe"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all"
+                  required
+                />
+              </div>
+
+              {/* Email Field */}
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <Mail className="w-4 h-4 inline mr-2" />
+                  Your Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="john@example.com"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all"
+                  required
+                />
+              </div>
+
+              {/* Subject Field */}
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="Project Collaboration / Job Opportunity / General Inquiry"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all"
+                />
+              </div>
+
+              {/* Message Field */}
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <MessageSquare className="w-4 h-4 inline mr-2" />
+                  Your Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Tell me about your project, opportunity, or just say hello..."
+                  rows="6"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all resize-none"
+                  required
+                />
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-black text-white py-4 px-6 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    <span>Sending...</span>
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    <span>Send Message</span>
+                  </>
+                )}
+              </button>
+
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                  <div>
+                    <p className="text-green-800 font-medium">Message sent successfully!</p>
+                    <p className="text-green-600 text-sm">I'll get back to you within 24 hours.</p>
+                  </div>
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-center gap-3">
+                  <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
+                  <div>
+                    <p className="text-red-800 font-medium">Failed to send message</p>
+                    <p className="text-red-600 text-sm">Please try again or contact me directly at amalh017@ucr.edu</p>
+                  </div>
+                </div>
+              )}
+            </form>
+          </div>
+
+          {/* Alternative Contact Methods */}
+          <div className="mt-12 text-center">
+            <p className="text-gray-600 mb-4">Or reach out directly:</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a
+                href="mailto:amalh017@ucr.edu"
+                className="flex items-center gap-2 text-black hover:text-gray-700 transition-colors"
+              >
+                <Mail className="w-5 h-5" />
+                <span>amalh017@ucr.edu</span>
+              </a>
+              <span className="hidden sm:inline text-gray-400">•</span>
+              <a
+                href="https://www.linkedin.com/in/malhotra-ankit/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-black hover:text-gray-700 transition-colors"
+              >
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
