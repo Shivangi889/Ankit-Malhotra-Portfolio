@@ -13,6 +13,7 @@ import ProjectDetails from './pages/Projects/ProjectDetails';
 import ImageGallerySlider from './components/ImageGallerySlider';
 import ImageCarousel from './components/ImageGallerySlider';
 import Experience from './components/Home Components/Experience';
+import WhosWhoBadge from './components/WhosWhoBadge';
 
 
 const LoadingFallback = () => (
@@ -39,6 +40,7 @@ export default function App() {
     <Router>
       <ScrollToTop />
       <Header />
+      <WhosWhoBadge />
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
           <Route path="/" element={<Hero />} />

@@ -64,6 +64,14 @@ export const achievementData = {
       //   image: Beta
     },
     {
+      id: 8,
+      title: 'Marquis Who\'s Who in America 2025 Honored Listee',
+      details: `I'm deeply honored to be listed in Who's Who in America, the distinguished biographical directory established in 1898 that recognizes the most prominent and influential living Americans. This recognition fuels my passion to push boundaries, drive innovation, and create lasting impact—inspiring me to continuously elevate my contributions and shape a future defined by excellence and visionary leadership.`,
+      date: '2025',
+      field: 'Recognition',
+      image: '../assets/whoswhoinamerica_badge.png'
+    },
+    {
       id: 2,
       title: 'Invited Speaker and Judge',
       details: `I've had the privilege of being invited as a speaker for a technology (AI) talk by the AIS & ACM club at UCR and serving as a judge for AI pitch competitions hosted by both the AIS Club UCR and the Business Strategy Club (for a Sustainability AI pitch competition).`,
