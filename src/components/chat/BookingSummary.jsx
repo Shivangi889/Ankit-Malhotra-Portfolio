@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Edit2 } from 'lucide-react';
-import { consultationOptions } from '../../data/consultationOptions';
+import { consultationOptions } from '../../Data/consultationOptions';
 
 const BookingSummary = ({ formData, onEdit, onConfirm, isLoading }) => {
   const serviceOption = consultationOptions.find(opt => opt.id === formData.service);

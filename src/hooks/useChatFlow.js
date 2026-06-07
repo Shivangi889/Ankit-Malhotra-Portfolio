@@ -1,6 +1,6 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { consultationOptions } from '../data/consultationOptions';
-import { timeSlots, dayNameMap, availableDays } from '../data/timeSlots';
+import { consultationOptions } from '../Data/consultationOptions';
+import { timeSlots, dayNameMap, availableDays } from '../Data/timeSlots';
 import { validateEmail, validateName, validateDate, validateTimeSlot } from '../services/bookingValidation';
 import { getBookedSlotsForDate, isSlotBooked } from '../services/googleSheets';
 

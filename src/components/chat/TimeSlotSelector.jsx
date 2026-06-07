@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ChevronLeft } from 'lucide-react';
-import { timeSlots, dayNameMap } from '../../data/timeSlots';
+import { timeSlots, dayNameMap } from '../../Data/timeSlots';
 
 const TimeSlotSelector = ({ selectedDate, onTimeSlotSelect, onBack, bookedSlots = [], isLoading = false }) => {
   if (!selectedDate) {
