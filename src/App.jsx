@@ -4,6 +4,7 @@ import { ScrollToTop } from './utils/utils';
 import Resume from './pages/Resume';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import ChatWidget from './components/chat/ChatWidget';
 import Hero from './pages/Home';
 import Projects from './pages/Projects';
 import Hobbies from './pages/Hobbies';
@@ -59,6 +60,7 @@ export default function App() {
       <div ref={footerRef}> {/* Wrap Footer with ref */}
         <Footer />
       </div>
+      <ChatWidget />
     </Router>
   );
 }

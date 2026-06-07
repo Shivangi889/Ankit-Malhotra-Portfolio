@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Send, CheckCircle, AlertCircle, User, MessageSquare } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 
-const Contact = ({ scrollToFooter }) => {
+const Contact = ({ scrollToFooter }) => {  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,36 +20,49 @@ const Contact = ({ scrollToFooter }) => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
+    const WEB3FORMS_ENDPOINT = import.meta.env.VITE_WEB3FORMS_ENDPOINT || 'https://api.web3forms.com/submit';
+    const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'b5215899-c467-460b-a13a-ccd87e112f9f';
+    const WEB3FORMS_WEBHOOK = import.meta.env.VITE_WEB3FORMS_WEBHOOK_URL || undefined;
+
+    const payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      name: formData.name,
+      email: formData.email,
       subject: formData.subject || 'Contact Form Submission',
       message: formData.message,
-      to_email: 'amalh017@ucr.edu' // Your email address
+      reply_to: formData.email,
+      source: 'Portfolio Contact Form'
     };
 
-    try {
-      // Initialize EmailJS with your public key
-      emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY');
+    if (WEB3FORMS_WEBHOOK) {
+      payload.webhook = WEB3FORMS_WEBHOOK;
+    }
 
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID',
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID',
-        templateParams
-      );
+    try {
+      const response = await fetch(WEB3FORMS_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || result.success === false) {
+        throw new Error(result.message || 'Failed to submit contact form.');
+      }
 
       setFormData({ name: '', email: '', subject: '', message: '' });
       setSubmitStatus('success');
-      
-      // Reset success message after 5 seconds
+
       setTimeout(() => {
         setSubmitStatus(null);
       }, 5000);
     } catch (error) {
-      console.error('Email send error:', error);
+      console.error('Web3Forms submit error:', error);
       setSubmitStatus('error');
-      
-      // Reset error message after 5 seconds
+
       setTimeout(() => {
         setSubmitStatus(null);
       }, 5000);
@@ -155,13 +167,13 @@ const Contact = ({ scrollToFooter }) => {
               >
                 {isSubmitting ? (
                   <>
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    <span>Sending...</span>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin color-white"></div>
+                    <span className='text-white'>Sending...</span>
                   </>
                 ) : (
                   <>
-                    <Send className="w-5 h-5" />
-                    <span>Send Message</span>
+                    <Send className="w-5 h-5 text-white" />
+                    <span className='text-white'>Send Message</span>
                   </>
                 )}
               </button>

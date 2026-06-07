@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Linkedin, Mail, Github, ArrowRight } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 
 const Footer = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -17,28 +16,43 @@ const Footer = () => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        const templateParams = {
-            from_name: formData.name,
-            from_email: formData.email,
-            message: formData.message,
+        const WEB3FORMS_ENDPOINT = import.meta.env.VITE_WEB3FORMS_ENDPOINT || 'https://api.web3forms.com/submit';
+        const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'b5215899-c467-460b-a13a-ccd87e112f9f';
+        const WEB3FORMS_WEBHOOK = import.meta.env.VITE_WEB3FORMS_WEBHOOK_URL || undefined;
+
+        const payload = {
+            access_key: WEB3FORMS_ACCESS_KEY,
+            name: formData.name,
+            email: formData.email,
             subject: 'Contact Form Submission from Portfolio',
-            to_email: 'amalh017@ucr.edu'
+            message: formData.message,
+            reply_to: formData.email,
+            source: 'Portfolio Footer Contact Form'
         };
 
-        try {
-            // Initialize EmailJS with your public key
-            emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY');
+        if (WEB3FORMS_WEBHOOK) {
+            payload.webhook = WEB3FORMS_WEBHOOK;
+        }
 
-            await emailjs.send(
-                import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID',
-                import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID',
-                templateParams
-            );
+        try {
+            const response = await fetch(WEB3FORMS_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const result = await response.json();
+
+            if (!response.ok || result.success === false) {
+                throw new Error(result.message || 'Failed to submit contact form.');
+            }
 
             setFormData({ name: '', email: '', message: '' });
             setShowModal(true);
         } catch (error) {
-            console.error('Email send error:', error);
+            console.error('Web3Forms submit error:', error);
             alert("Something went wrong! Please try again or contact me directly at amalh017@ucr.edu");
         } finally {
             setIsSubmitting(false);
